@@ -1,4 +1,4 @@
-import { Button as StyledButton } from "../../styles/common/Button.styled";
+import { Button as StyledButton } from "../../styles/common";
 
 const Button = () => {
   return <StyledButton type="button">Замовити послугу</StyledButton>;
