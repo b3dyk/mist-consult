@@ -27,6 +27,7 @@ export const globalStyles: ITheme = {
     bxl: "32px",
     bxxl: "40px",
     bxxxl: "44px",
+    hero: "88px",
   },
 
   fontWeight: {
@@ -34,6 +35,7 @@ export const globalStyles: ITheme = {
     medium: 500,
     semiBold: 600,
     bold: 700,
+    boldxl: 900,
   },
 
   color: {
