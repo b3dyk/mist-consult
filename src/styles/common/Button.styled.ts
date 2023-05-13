@@ -4,7 +4,7 @@ export const Button = styled.button`
   padding: 14px 32px;
 
   cursor: pointer;
-  border: none;
+  border: 3px solid transparent;
   border-radius: ${(p) => p.theme.radii.normal};
   background-color: ${(p) => p.theme.color.accent};
   color: ${(p) => p.theme.color.white};
@@ -15,12 +15,13 @@ export const Button = styled.button`
 
   transition: background-color ${(p) => p.theme.animation.main},
     transform ${(p) => p.theme.animation.main},
-    outline ${(p) => p.theme.animation.main};
+    border-color ${(p) => p.theme.animation.main};
 
-  :hover,
-  :focus {
-    background-color: ${(p) => p.theme.color.accent};
-    outline: 1px solid #5ad784;
+  :hover {
+    background-color: ${(p) => p.theme.color.white};
+    border: 3px solid;
+    border-color: ${(p) => p.theme.color.accent};
+    color: ${(p) => p.theme.color.accent};
   }
 
   :active {

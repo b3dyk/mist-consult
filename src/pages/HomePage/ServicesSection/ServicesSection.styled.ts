@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ServicesSection = styled.section`
   padding-top: 80px;
   padding-bottom: 80px;
-  background-color: ${(p) => p.theme.color.bgGrey};
+  /* background-color: ${(p) => p.theme.color.bgGrey}; */
   text-align: center;
 `;
 
@@ -25,9 +25,14 @@ export const List = styled.ul`
 export const CardItem = styled.li`
   border-radius: ${(p) => p.theme.radii.normal};
   overflow: hidden;
+  transition: transform ${(p) => p.theme.animation.long};
+
+  :hover {
+    transform: scale(1.01);
+  }
 
   :hover span {
-    transform: translateY(0);
+    transform: translateY(0) scale(1.1);
   }
 `;
 
@@ -41,7 +46,7 @@ export const CardTitle = styled.span`
   right: 75%;
   width: 200px;
 
-  transform: translateY(-400%);
+  transform: translateY(-100%) scale(0.9);
 
   font-weight: ${(p) => p.theme.fontWeight.semiBold};
   font-size: ${(p) => p.theme.fontSize.xxxl};

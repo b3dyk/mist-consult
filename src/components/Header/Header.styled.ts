@@ -1,6 +1,15 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
+export const Header = styled.header`
+  box-shadow: 0px 4px 12px rgba(202, 202, 202, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: ${(p) => p.theme.color.snowWhite};
+`;
+
 export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -37,11 +46,11 @@ export const StyledLink = styled(NavLink)`
   :hover,
   :focus {
     color: ${(p) => p.theme.color.accent};
-    text-decoration: underline;
   }
 
   &.active {
     color: ${(p) => p.theme.color.accent};
+    border-bottom: 3px solid ${(p) => p.theme.color.accent};
   }
 `;
 

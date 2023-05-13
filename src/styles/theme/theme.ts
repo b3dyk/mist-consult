@@ -44,6 +44,7 @@ export const globalStyles: ITheme = {
   color: {
     accent: "#29974e",
     white: "#fcfcfc",
+    snowWhite: "#fff",
     bgGrey: "#f4f4f4",
     bgWhite: "#eee",
     textMain: "#323232",

@@ -4,7 +4,7 @@ export const AdvantagesSection = styled.section`
   padding-top: 80px;
   padding-bottom: 80px;
   text-align: center;
-  background-color: ${(p) => p.theme.color.bgGrey};
+  /* background-color: ${(p) => p.theme.color.bgGrey}; */
 `;
 
 export const AdvantagesHeading = styled.h2`
@@ -40,7 +40,6 @@ export const Circle = styled.div`
 
   border-radius: ${(p) => p.theme.radii.circle};
   border: 8px solid ${(p) => p.theme.color.accent};
-  background-color: #fff;
 `;
 
 export const CardTitle = styled.h3`

@@ -3,6 +3,7 @@ import { IMG } from "../../../assets/images";
 
 export const HeroSection = styled.section`
   margin: 0 auto;
+  background-color: ${(p) => p.theme.color.bgGrey};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

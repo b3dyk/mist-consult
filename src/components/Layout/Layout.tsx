@@ -4,17 +4,18 @@ import { Suspense } from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import Loader from "../Loader";
+import * as SC from "./Layout.styled";
 
 const Layout: React.FC = () => {
   return (
     <>
       <Header />
 
-      <main>
+      <SC.Main>
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
-      </main>
+      </SC.Main>
 
       <Footer />
     </>

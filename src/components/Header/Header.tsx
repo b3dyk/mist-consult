@@ -6,7 +6,7 @@ import Button from "../Button";
 
 export const Header = () => {
   return (
-    <header>
+    <SC.Header>
       <Container>
         <SC.HeaderContainer>
           <Link to="/">
@@ -30,6 +30,6 @@ export const Header = () => {
           </SC.Wrapper>
         </SC.HeaderContainer>
       </Container>
-    </header>
+    </SC.Header>
   );
 };

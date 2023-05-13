@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const AboutSection = styled.section`
   padding-top: 80px;
   padding-bottom: 80px;
+  background-color: ${(p) => p.theme.color.bgGrey};
 `;
 
 export const Thumb = styled.div`
