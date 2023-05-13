@@ -9,7 +9,10 @@ export interface ITheme {
 export const globalStyles: ITheme = {
   space: [0, 2, 4, 8, 16, 32, 48, 64, 128, 256],
 
-  animation: { main: "250ms cubic-bezier(0.4, 0, 0.2, 1)}" },
+  animation: {
+    main: "250ms cubic-bezier(0.4, 0, 0.2, 1)}",
+    long: "500ms cubic-bezier(0.4, 0, 0.2, 1)}",
+  },
 
   fontFamily: {
     main: "montserrat",
