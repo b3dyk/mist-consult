@@ -16,6 +16,7 @@ export const Title = styled.h2`
   font-weight: ${(p) => p.theme.fontWeight.bold};
   font-size: ${(p) => p.theme.fontSize.bxl};
   line-height: 1.219;
+  color: ${(p) => p.theme.color.textMain};
 `;
 
 export const List = styled.ul`

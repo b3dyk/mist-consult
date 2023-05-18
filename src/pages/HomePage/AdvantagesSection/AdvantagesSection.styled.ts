@@ -19,6 +19,7 @@ export const AdvantagesSection = styled.section`
 export const AdvantagesHeading = styled.h2`
   font-weight: ${(p) => p.theme.fontWeight.bold};
   font-size: ${(p) => p.theme.fontSize.xxxl};
+  color: ${(p) => p.theme.color.textMain};
   line-height: 1.208;
   margin-bottom: 40px;
 
@@ -114,6 +115,7 @@ export const CardTitle = styled.h3`
   font-weight: ${(p) => p.theme.fontWeight.bold};
   font-size: ${(p) => p.theme.fontSize.xxxl};
   line-height: 1.208;
+  color: ${(p) => p.theme.color.textMain};
   margin-bottom: 4px;
 
   @media screen and (min-width: 1440px) {
