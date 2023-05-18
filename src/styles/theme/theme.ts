@@ -30,6 +30,7 @@ export const globalStyles: ITheme = {
     bxl: "32px",
     bxxl: "40px",
     bxxxl: "44px",
+    heroTab: "56px",
     hero: "88px",
   },
 

@@ -1,23 +1,37 @@
 import { IMG } from "../../../assets/images";
+import { useResize } from "../../../hooks/useResize";
 import { Container } from "../../../styles/common";
 import * as SC from "./AboutSection.styled";
 
 export const AboutSection = () => {
+  const { isScreenDesktop } = useResize();
+
   return (
     <SC.AboutSection>
       <Container>
+        {!isScreenDesktop && <SC.Title>Про компанію</SC.Title>}
         <SC.Thumb>
           <picture>
             <source
-              srcSet={`${IMG.aboutUs} 1x, ${IMG.aboutUs2x} 2x`}
+              srcSet={`${IMG.aboutUsDesk} 1x, ${IMG.aboutUsDesk2x} 2x`}
               type="image/webp"
-              media="(min-width: 1200px)"
+              media="(min-width: 1440px)"
+            />
+            <source
+              srcSet={`${IMG.aboutUsTab} 1x, ${IMG.aboutUsTab2x} 2x`}
+              type="image/webp"
+              media="(min-width: 768px)"
+            />
+            <source
+              srcSet={`${IMG.aboutUsMob} 1x, ${IMG.aboutUsMob2x} 2x`}
+              type="image/webp"
+              media="(max-width: 767px)"
             />
             <SC.Image src={IMG.aboutUs} alt="about us" />
           </picture>
 
           <SC.Wrapper>
-            <SC.Title>Про компанію</SC.Title>
+            {isScreenDesktop && <SC.Title>Про компанію</SC.Title>}
             <SC.Description>
               Lorem ipsum dolor sit amet consectetur. Et lacus facilisis aliquet
               scelerisque quisque turpis morbi condimentum. Facilisis tristique

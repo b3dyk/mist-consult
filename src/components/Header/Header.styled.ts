@@ -8,14 +8,30 @@ export const Header = styled.header`
   left: 0;
   right: 0;
   background-color: ${(p) => p.theme.color.snowWhite};
+  padding-top: 4px;
+  padding-bottom: 4px;
+  z-index: 10;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
 `;
 
 export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 16px;
-  padding-bottom: 16px;
+`;
+
+export const Logo = styled.img`
+  width: 40px;
+  height: 40px;
+
+  @media screen and (min-width: 768px) {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 export const NavList = styled.ul`

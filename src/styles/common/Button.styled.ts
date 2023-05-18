@@ -27,4 +27,9 @@ export const Button = styled.button`
   :active {
     transform: scale(0.99);
   }
+
+  @media screen and (max-width: 767px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;

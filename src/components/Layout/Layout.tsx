@@ -5,8 +5,11 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Loader from "../Loader";
 import * as SC from "./Layout.styled";
+import { useResize } from "../../hooks/useResize";
 
 const Layout: React.FC = () => {
+  const { isScreenMobile } = useResize();
+
   return (
     <>
       <Header />
@@ -17,7 +20,7 @@ const Layout: React.FC = () => {
         </Suspense>
       </SC.Main>
 
-      <Footer />
+      {!isScreenMobile && <Footer />}
     </>
   );
 };
