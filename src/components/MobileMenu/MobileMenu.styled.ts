@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { Container } from "../../styles/common";
 
 export const MobileMenu = styled.div`
   position: absolute;
@@ -22,6 +23,12 @@ export const MobileMenu = styled.div`
   transition-property: transform;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+`;
+
+export const StyledContainer = styled(Container)`
+  @media screen and (max-width: 374px) {
+    width: 325px;
+  }
 `;
 
 export const Wrapper = styled.div`

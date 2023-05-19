@@ -50,16 +50,18 @@ export const CardItem = styled.li`
 
 export const CardLink = styled.a`
   position: relative;
+  z-index: -1;
 `;
 
 export const CardTitle = styled.span`
   position: absolute;
   top: 7%;
-  right: 74%;
+  right: 65%;
   width: 200px;
+  z-index: 1;
 
   font-weight: ${(p) => p.theme.fontWeight.semiBold};
-  font-size: ${(p) => p.theme.fontSize.xxxl};
+  font-size: ${(p) => p.theme.fontSize.xl};
   line-height: 1.208;
   text-align: start;
 
