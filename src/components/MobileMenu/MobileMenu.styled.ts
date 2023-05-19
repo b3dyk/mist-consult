@@ -25,12 +25,6 @@ export const MobileMenu = styled.div`
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
-export const StyledContainer = styled(Container)`
-  @media screen and (max-width: 374px) {
-    width: 325px;
-  }
-`;
-
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;

@@ -28,7 +28,7 @@ export const ServicesSection = () => {
                   type="image/webp"
                   media="(max-width: 767px)"
                 />
-                <img src={IMG.serviceCard1} alt="field" />
+                <SC.CardImage src={IMG.serviceCard1} alt="field" />
               </picture>
             </SC.CardLink>
           </SC.CardItem>
