@@ -12,7 +12,7 @@ export const ServicesSection = () => {
           <SC.CardItem>
             <SC.CardLink href="">
               <SC.CardTitle>Земельні відносини</SC.CardTitle>
-              <SC.CardPicture>
+              <picture>
                 <source
                   srcSet={`${IMG.serviceCard1Desk} 1x, ${IMG.serviceCard1Desk2x} 2x`}
                   type="image/webp"
@@ -29,7 +29,7 @@ export const ServicesSection = () => {
                   media="(max-width: 767px)"
                 />
                 <SC.CardImage src={IMG.serviceCard1} alt="field" />
-              </SC.CardPicture>
+              </picture>
             </SC.CardLink>
           </SC.CardItem>
           <SC.CardItem>
