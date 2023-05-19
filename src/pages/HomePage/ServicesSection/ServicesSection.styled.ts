@@ -50,7 +50,7 @@ export const CardItem = styled.li`
 
 export const CardLink = styled.a`
   position: relative;
-  z-index: -1;
+  z-index: 10;
 `;
 
 export const CardImage = styled.img`
@@ -63,7 +63,7 @@ export const CardTitle = styled.span`
   top: 7%;
   right: 65%;
   width: 200px;
-  z-index: 2;
+  z-index: 5;
 
   font-weight: ${(p) => p.theme.fontWeight.semiBold};
   font-size: ${(p) => p.theme.fontSize.xl};

@@ -10,7 +10,7 @@ export const Header = styled.header`
   background-color: ${(p) => p.theme.color.snowWhite};
   padding-top: 4px;
   padding-bottom: 4px;
-  z-index: 10;
+  z-index: 20;
 
   @media screen and (min-width: 768px) {
     padding-top: 16px;
