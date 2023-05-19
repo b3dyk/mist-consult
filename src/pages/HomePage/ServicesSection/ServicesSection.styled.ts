@@ -53,6 +53,11 @@ export const CardLink = styled.a`
   z-index: 10;
 `;
 
+export const CardPicture = styled.picture`
+  position: relative;
+  z-index: 1;
+`;
+
 export const CardImage = styled.img`
   position: relative;
   z-index: 1;
