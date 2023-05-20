@@ -6,4 +6,5 @@ export const IconButton = styled.button`
   padding: 0;
   margin: 0;
   max-height: 40px;
+  cursor: pointer;
 `;
