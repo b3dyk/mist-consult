@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ServicesSection = styled.section`
   padding-top: 40px;
   padding-bottom: 40px;
-  text-align: center;
+  /* text-align: center; */
 
   @media screen and (min-width: 1440px) {
     padding-top: 80px;
@@ -17,6 +17,7 @@ export const Title = styled.h2`
   font-size: ${(p) => p.theme.fontSize.bxl};
   line-height: 1.219;
   color: ${(p) => p.theme.color.textMain};
+  text-align: center;
 `;
 
 export const List = styled.ul`
@@ -29,9 +30,17 @@ export const List = styled.ul`
   @media screen and (max-width: 767px) {
     flex-direction: column;
   }
+
+  & + button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const CardItem = styled.li`
+  position: relative;
+  z-index: 10;
   border-radius: ${(p) => p.theme.radii.normal};
   overflow: hidden;
 
@@ -53,15 +62,10 @@ export const CardLink = styled.a`
   z-index: 10;
 `;
 
-export const CardImage = styled.img`
-  position: relative;
-  z-index: 1;
-`;
-
 export const CardTitle = styled.span`
   position: absolute;
   top: 7%;
-  right: 65%;
+  left: 10%;
   width: 200px;
   z-index: 5;
 
@@ -72,14 +76,25 @@ export const CardTitle = styled.span`
 
   color: ${(p) => p.theme.color.white};
 
-  @media screen and (min-width: 768px) {
-    right: 8%;
-  }
-
   @media screen and (min-width: 1440px) {
     top: 15%;
-    right: 75%;
+    right: 35%;
     transform: translateY(-100%) scale(0.9);
     transition: transform ${(p) => p.theme.animation.long};
   }
+`;
+
+export const CardImage = styled.img`
+  position: relative;
+  z-index: 1;
+`;
+
+export const CardPicture = styled.picture`
+  position: relative;
+  z-index: 2;
+`;
+
+export const CardSource = styled.source`
+  position: relative;
+  z-index: 3;
 `;

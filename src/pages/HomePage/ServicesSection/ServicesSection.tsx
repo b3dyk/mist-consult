@@ -1,5 +1,5 @@
-import Button from "../../../components/Button";
 import { IMG } from "../../../assets/images";
+import Button from "../../../components/Button";
 import { Container } from "../../../styles/common";
 import * as SC from "./ServicesSection.styled";
 
@@ -12,24 +12,24 @@ export const ServicesSection = () => {
           <SC.CardItem>
             <SC.CardLink href="">
               <SC.CardTitle>Земельні відносини</SC.CardTitle>
-              <picture>
-                <source
+              <SC.CardPicture>
+                <SC.CardSource
                   srcSet={`${IMG.serviceCard1Desk} 1x, ${IMG.serviceCard1Desk2x} 2x`}
                   type="image/webp"
                   media="(min-width: 1440px)"
                 />
-                <source
+                <SC.CardSource
                   srcSet={`${IMG.serviceCard1Tab} 1x, ${IMG.serviceCard1Tab2x} 2x`}
                   type="image/webp"
                   media="(min-width: 768px)"
                 />
-                <source
+                <SC.CardSource
                   srcSet={`${IMG.serviceCard1Mob} 1x, ${IMG.serviceCard1Mob2x} 2x`}
                   type="image/webp"
                   media="(max-width: 767px)"
                 />
                 <SC.CardImage src={IMG.serviceCard1} alt="field" />
-              </picture>
+              </SC.CardPicture>
             </SC.CardLink>
           </SC.CardItem>
           <SC.CardItem>
