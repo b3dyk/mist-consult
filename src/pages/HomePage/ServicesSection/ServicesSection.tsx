@@ -12,24 +12,24 @@ export const ServicesSection = () => {
           <SC.CardItem>
             <SC.CardLink href="">
               <SC.CardTitle>Земельні відносини</SC.CardTitle>
-              <SC.CardPicture>
-                <SC.CardSource
+              <picture>
+                <source
                   srcSet={`${IMG.serviceCard1Desk} 1x, ${IMG.serviceCard1Desk2x} 2x`}
                   type="image/webp"
                   media="(min-width: 1440px)"
                 />
-                <SC.CardSource
+                <source
                   srcSet={`${IMG.serviceCard1Tab} 1x, ${IMG.serviceCard1Tab2x} 2x`}
                   type="image/webp"
                   media="(min-width: 768px)"
                 />
-                <SC.CardSource
+                <source
                   srcSet={`${IMG.serviceCard1Mob} 1x, ${IMG.serviceCard1Mob2x} 2x`}
                   type="image/webp"
                   media="(max-width: 767px)"
                 />
-                <SC.CardImage src={IMG.serviceCard1} alt="field" />
-              </SC.CardPicture>
+                <img src={IMG.serviceCard1} alt="field" />
+              </picture>
             </SC.CardLink>
           </SC.CardItem>
           <SC.CardItem>
