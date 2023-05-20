@@ -50,6 +50,7 @@ export const globalStyles: ITheme = {
     bgWhite: "#eee",
     textMain: "#323232",
     textSecondary: "#766f6f",
+    textGrey: "#9c9c9c",
   },
 
   radii: {
