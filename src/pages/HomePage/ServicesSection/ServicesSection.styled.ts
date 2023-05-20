@@ -64,8 +64,8 @@ export const CardLink = styled.a`
 
 export const CardTitle = styled.span`
   position: absolute;
-  top: 7%;
-  left: 10%;
+  top: 24px;
+  left: 32px;
   width: 200px;
   z-index: 5;
 
@@ -77,24 +77,9 @@ export const CardTitle = styled.span`
   color: ${(p) => p.theme.color.white};
 
   @media screen and (min-width: 1440px) {
-    top: 15%;
-    right: 35%;
+    top: 70px;
+    left: 50px;
     transform: translateY(-100%) scale(0.9);
     transition: transform ${(p) => p.theme.animation.long};
   }
-`;
-
-export const CardImage = styled.img`
-  position: relative;
-  z-index: 1;
-`;
-
-export const CardPicture = styled.picture`
-  position: relative;
-  z-index: 2;
-`;
-
-export const CardSource = styled.source`
-  position: relative;
-  z-index: 3;
 `;
