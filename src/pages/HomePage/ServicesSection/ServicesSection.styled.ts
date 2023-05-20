@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const ServicesSection = styled.section`
@@ -57,7 +58,7 @@ export const CardItem = styled.li`
   }
 `;
 
-export const CardLink = styled.a`
+export const CardLink = styled(Link)`
   position: relative;
   z-index: 10;
 `;

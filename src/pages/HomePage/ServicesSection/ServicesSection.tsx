@@ -10,7 +10,7 @@ export const ServicesSection = () => {
         <SC.Title>Послуги</SC.Title>
         <SC.List>
           <SC.CardItem>
-            <SC.CardLink href="">
+            <SC.CardLink to="services">
               <SC.CardTitle>Земельні відносини</SC.CardTitle>
               <picture>
                 <source
@@ -33,7 +33,7 @@ export const ServicesSection = () => {
             </SC.CardLink>
           </SC.CardItem>
           <SC.CardItem>
-            <SC.CardLink href="">
+            <SC.CardLink to="services">
               <SC.CardTitle>Містобудівна діяльність</SC.CardTitle>
               <picture>
                 <source
@@ -56,7 +56,7 @@ export const ServicesSection = () => {
             </SC.CardLink>
           </SC.CardItem>
           <SC.CardItem>
-            <SC.CardLink href="">
+            <SC.CardLink to="services">
               <SC.CardTitle>Благоустрій</SC.CardTitle>
               <picture>
                 <source
