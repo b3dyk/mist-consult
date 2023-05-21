@@ -1,0 +1,21 @@
+import { SVG } from "../../assets/images";
+import * as SC from "./ArrowUp.styled";
+import { useWindowScrollPositions } from "../../hooks/useWindowScrollPosition";
+
+export const ArrowUp = () => {
+  const { scrollY } = useWindowScrollPositions();
+
+  const goUp = () => {
+    window.scrollTo(0, 0);
+  };
+
+  return (
+    <SC.ArrowUp
+      type="button"
+      onClick={goUp}
+      className={scrollY > 100 ? "visible" : ""}
+    >
+      <SVG.Up />
+    </SC.ArrowUp>
+  );
+};

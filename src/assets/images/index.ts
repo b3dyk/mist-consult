@@ -69,6 +69,7 @@ import { ReactComponent as Burger } from "./svg/burger.svg";
 import { ReactComponent as Close } from "./svg/close.svg";
 import { ReactComponent as Chevron } from "./svg/chevron.svg";
 import { ReactComponent as DoubleChevron } from "./svg/doubleChevron.svg";
+import { ReactComponent as Up } from "./svg/up.svg";
 
 interface IIMG {
   [key: string]: string;
@@ -145,4 +146,5 @@ export const SVG: ISVG = {
   Close,
   Chevron,
   DoubleChevron,
+  Up,
 };

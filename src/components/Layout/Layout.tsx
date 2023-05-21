@@ -4,8 +4,9 @@ import { Suspense } from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import Loader from "../Loader";
-import * as SC from "./Layout.styled";
+import ArrowUp from "../ArrowUp";
 import { useResize } from "../../hooks/useResize";
+import * as SC from "./Layout.styled";
 
 const Layout: React.FC = () => {
   const { isScreenMobile } = useResize();
@@ -19,6 +20,8 @@ const Layout: React.FC = () => {
           <Outlet />
         </Suspense>
       </SC.Main>
+
+      <ArrowUp />
 
       {!isScreenMobile && <Footer />}
     </>
