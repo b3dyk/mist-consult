@@ -13,6 +13,15 @@ interface IOption {
 export const Option = styled.section<IOption>`
   padding-top: 40px;
   padding-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  @media screen and (min-width: 1440px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -27,14 +36,20 @@ export const StyledIconBtn = styled(IconButton)`
   justify-content: space-between;
   width: 100%;
   max-height: 48px;
-  padding: 10px 40px;
-
-  font-weight: ${(p) => p.theme.fontWeight.bold};
-  font-size: ${(p) => p.theme.fontSize.xxxl};
-  line-height: 1.208;
+  padding: 8px 16px;
 
   background-color: ${(p) => p.theme.color.accent};
   color: ${(p) => p.theme.color.white};
+
+  font-weight: ${(p) => p.theme.fontWeight.bold};
+  font-size: ${(p) => p.theme.fontSize.xl};
+  line-height: 1.2;
+
+  @media screen and (min-width: 768px) {
+    font-size: ${(p) => p.theme.fontSize.xxxl};
+    line-height: 1.208;
+    padding: 10px 40px;
+  }
 `;
 
 export const StyledChevron = styled(SVG.Chevron)<IProps>`
@@ -50,7 +65,10 @@ export const ListWrapper = styled.div<IProps>`
   position: relative;
   border: 3px solid ${(p) => p.theme.color.accent};
   border-radius: ${(p) => p.theme.radii.normal};
-  padding: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 8px;
+  padding-right: 8px;
   margin-bottom: 20px;
 
   ::before {
@@ -79,6 +97,11 @@ export const ListWrapper = styled.div<IProps>`
     )`};
   }
 
+  @media screen and (min-width: 768px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
   & + button {
     display: block;
     margin-left: auto;
@@ -94,10 +117,14 @@ export const List = styled.ul`
 
 export const Text = styled.p`
   font-weight: ${(p) => p.theme.fontWeight.regular};
-  font-size: ${(p) => p.theme.fontSize.xl};
+  font-size: ${(p) => p.theme.fontSize.s};
   line-height: 2;
 
   color: ${(p) => p.theme.color.textMain};
+
+  @media screen and (min-width: 768px) {
+    font-size: ${(p) => p.theme.fontSize.xl};
+  }
 `;
 
 export const StyledExpandBtn = styled(StyledIconBtn)`
