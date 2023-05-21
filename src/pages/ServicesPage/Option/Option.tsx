@@ -3,6 +3,7 @@ import { IMG } from "../../../assets/images";
 import Button from "../../../components/Button";
 import * as SC from "../../../styles/common/Option.styled";
 import { options } from "../../../assets/data/options";
+import { useWindowScrollPositions } from "../../../hooks/useWindowScrollPosition";
 
 interface IOptionsProps {
   title: string;
@@ -11,11 +12,27 @@ interface IOptionsProps {
 
 export const Option = ({ title, idx }: IOptionsProps) => {
   const [expanded, setExpanded] = useState(false);
+  const { scrollY } = useWindowScrollPositions();
 
-  const arrayToMap = options[title];
+  const optionValues = options[title];
 
-  const handleExpand = () => {
+  const handleExpand = (evt: React.PointerEvent<HTMLButtonElement>) => {
     setExpanded((prev) => !prev);
+
+    if (expanded) {
+      switch (evt.currentTarget.name) {
+        case "Земельні відносини":
+          return window.scrollTo(0, 189);
+
+        case "Містобудівна діяльність":
+          return window.scrollTo(0, 1167);
+
+        default:
+          return;
+      }
+    } else {
+      window.scrollTo(0, scrollY + 250);
+    }
   };
 
   return (
@@ -48,7 +65,7 @@ export const Option = ({ title, idx }: IOptionsProps) => {
         <SC.StyledIconBtn
           type="button"
           onClick={handleExpand}
-          disabled={arrayToMap.length < 5}
+          disabled={optionValues.length < 5}
         >
           {title}:
           <SC.StyledChevron $expanded={expanded} />
@@ -57,19 +74,19 @@ export const Option = ({ title, idx }: IOptionsProps) => {
       <SC.ListWrapper $expanded={expanded}>
         <SC.List>
           {expanded
-            ? arrayToMap.map((item, index) => (
+            ? optionValues.map((item, index) => (
                 <li key={index}>
                   <SC.Text>{item}</SC.Text>
                 </li>
               ))
-            : arrayToMap.slice(0, 5).map((item, index) => (
+            : optionValues.slice(0, 5).map((item, index) => (
                 <li key={index}>
                   <SC.Text>{item}</SC.Text>
                 </li>
               ))}
         </SC.List>
-        {arrayToMap.length > 5 && (
-          <SC.StyledExpandBtn type="button" onClick={handleExpand}>
+        {optionValues.length > 5 && (
+          <SC.StyledExpandBtn type="button" name={title} onClick={handleExpand}>
             {expanded ? "Згорнути" : "Розгорнути"}
             <SC.StyledDoubleChevron $expanded={expanded} />
           </SC.StyledExpandBtn>

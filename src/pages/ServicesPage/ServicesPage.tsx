@@ -2,8 +2,13 @@ import { Container } from "../../styles/common";
 import * as SC from "./ServicesPage.styled";
 import { options } from "../../assets/data/options";
 import Option from "./Option";
+import { useEffect } from "react";
 
 const ServicesPage: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Container>
