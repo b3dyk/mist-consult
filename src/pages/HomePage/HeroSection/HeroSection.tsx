@@ -8,9 +8,7 @@ export const HeroSection = () => {
       <Container>
         <SC.SubHeading>Консалтингова компанія</SC.SubHeading>
         <SC.HeroHeading>МІСТ КОНСАЛТ</SC.HeroHeading>
-        <SC.Motivation>
-          Тут було б добре мати ваш слоган або мотивуючу фразу
-        </SC.Motivation>
+        <SC.Motivation>Між метою та результатом є Міст</SC.Motivation>
         <Button />
       </Container>
     </SC.HeroSection>
