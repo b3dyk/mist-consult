@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { SVG } from "../../assets/images";
 
 export const Header = styled.header`
   box-shadow: 0px 4px 12px rgba(202, 202, 202, 0.25);
@@ -24,13 +25,13 @@ export const HeaderContainer = styled.div`
   align-items: center;
 `;
 
-export const Logo = styled.img`
-  width: 40px;
-  height: 40px;
+export const Logo = styled(SVG.Mist)`
+  width: 36px;
+  height: 36px;
 
   @media screen and (min-width: 768px) {
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
   }
 `;
 

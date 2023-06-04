@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { IMG, SVG } from "../../assets/images";
+import { SVG } from "../../assets/images";
 import * as SC from "./Header.styled";
 import { Container } from "../../styles/common/Container.styled";
 import Button from "../Button";
@@ -20,7 +19,7 @@ export const Header = () => {
       <Container>
         <SC.HeaderContainer>
           <Link to="/">
-            <SC.Logo src={IMG.logo} alt="logo" width="80" />
+            <SC.Logo />
           </Link>
           {isScreenMobile ? (
             <IconButton type="button" onClick={handleBurgerMenu}>
