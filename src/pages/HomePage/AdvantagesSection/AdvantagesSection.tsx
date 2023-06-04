@@ -3,6 +3,10 @@ import { SVG } from "../../../assets/images";
 import * as SC from "./AdvantagesSection.styled";
 
 export const AdvantagesSection = () => {
+  const years = Math.floor(
+    (Date.now() - 1577833200000) / (1000 * 60 * 60 * 24 * 365)
+  );
+
   return (
     <SC.AdvantagesSection>
       <Container>
@@ -13,7 +17,7 @@ export const AdvantagesSection = () => {
               <SVG.UserCheck />
             </SC.Circle>
             <div>
-              <SC.CardTitle>3 роки</SC.CardTitle>
+              <SC.CardTitle>{years} роки</SC.CardTitle>
               <SC.CardDesc>надаємо послуги в сфері земледіяльності</SC.CardDesc>
             </div>
           </SC.Card>
@@ -22,7 +26,7 @@ export const AdvantagesSection = () => {
               <SVG.UserCheck />
             </SC.Circle>
             <div>
-              <SC.CardTitle>100+</SC.CardTitle>
+              <SC.CardTitle>200+</SC.CardTitle>
               <SC.CardDesc>
                 клієнтів, які звернулись до нашої компанії
               </SC.CardDesc>
@@ -33,7 +37,7 @@ export const AdvantagesSection = () => {
               <SVG.Calendar />
             </SC.Circle>
             <div>
-              <SC.CardTitle>100+ кейсів</SC.CardTitle>
+              <SC.CardTitle>500+ кейсів</SC.CardTitle>
               <SC.CardDesc>від наших клієнтів, які ми вирішили</SC.CardDesc>
             </div>
           </SC.Card>
