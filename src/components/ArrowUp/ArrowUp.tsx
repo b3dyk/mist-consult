@@ -2,7 +2,7 @@ import { SVG } from "../../assets/images";
 import * as SC from "./ArrowUp.styled";
 import { useWindowScrollPositions } from "../../hooks/useWindowScrollPosition";
 
-export const ArrowUp = () => {
+const ArrowUp = () => {
   const { scrollY } = useWindowScrollPositions();
 
   const goUp = () => {
@@ -19,3 +19,5 @@ export const ArrowUp = () => {
     </SC.ArrowUp>
   );
 };
+
+export default ArrowUp;
