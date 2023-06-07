@@ -1,11 +1,3 @@
-import aboutUs from "./about/about-us-img.jpg";
-import aboutUsMob from "./about/about-us-mob.webp";
-import aboutUsMob2x from "./about/about-us-mob2x.webp";
-import aboutUsTab from "./about/about-us-tab.webp";
-import aboutUsTab2x from "./about/about-us-tab2x.webp";
-import aboutUsDesk from "./about/about-us.webp";
-import aboutUsDesk2x from "./about/about-us2x.webp";
-
 import serviceCard1 from "./services/field.jpg";
 import serviceCard1Mob from "./services/fieldMob.webp";
 import serviceCard1Mob2x from "./services/fieldMob2x.webp";
@@ -74,13 +66,6 @@ interface ISVG {
 }
 
 export const IMG: IIMG = {
-  aboutUs,
-  aboutUsMob,
-  aboutUsMob2x,
-  aboutUsTab,
-  aboutUsTab2x,
-  aboutUsDesk,
-  aboutUsDesk2x,
   serviceCard1,
   serviceCard1Mob,
   serviceCard1Tab,
