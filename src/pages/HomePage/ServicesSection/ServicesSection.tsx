@@ -13,7 +13,6 @@ export const ServicesSection = () => {
           {Object.keys(options).map((item, idx) => (
             <SC.CardItem key={idx}>
               <SC.CardLink to="services">
-                <SC.CardTitle>{item}</SC.CardTitle>
                 <picture>
                   <source
                     srcSet={`${IMG[`serviceCard${idx + 1}Desk`]} 1x, ${
@@ -38,6 +37,7 @@ export const ServicesSection = () => {
                   />
                   <img src={IMG[`serviceCard${idx + 1}`]} alt={item} />
                 </picture>
+                <SC.CardTitle>{item}</SC.CardTitle>
               </SC.CardLink>
             </SC.CardItem>
           ))}

@@ -40,47 +40,37 @@ export const List = styled.ul`
 `;
 
 export const CardItem = styled.li`
-  position: relative;
-  z-index: 10;
+  border: 1px solid ${(p) => p.theme.color.accent};
   border-radius: ${(p) => p.theme.radii.normal};
   overflow: hidden;
 
   @media screen and (min-width: 1440px) {
-    transition: transform ${(p) => p.theme.animation.long};
+    padding-bottom: 24px;
+    transition: transform ${(p) => p.theme.animation.main};
 
     :hover {
       transform: scale(1.01);
-    }
-
-    :hover span {
-      transform: translateY(0) scale(1.1);
     }
   }
 `;
 
 export const CardLink = styled(Link)`
-  position: relative;
-  z-index: 10;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 320px;
 `;
 
 export const CardTitle = styled.span`
-  position: absolute;
-  top: 24px;
-  left: 32px;
-  width: 200px;
-  z-index: 5;
-
   font-weight: ${(p) => p.theme.fontWeight.semiBold};
-  font-size: ${(p) => p.theme.fontSize.xl};
+  font-size: ${(p) => p.theme.fontSize.xxxl};
   line-height: 1.208;
-  text-align: start;
 
-  color: ${(p) => p.theme.color.white};
+  color: ${(p) => p.theme.color.textMain};
 
   @media screen and (min-width: 1440px) {
-    top: 70px;
-    left: 50px;
-    transform: translateY(-100%) scale(0.9);
     transition: transform ${(p) => p.theme.animation.long};
   }
 `;
