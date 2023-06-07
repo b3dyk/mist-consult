@@ -38,6 +38,7 @@ export const StyledContainer = styled(Container)`
 
 export const Logo = styled(SVG.Logo)`
   margin-bottom: 32px;
+  fill: #4d6e59;
 
   @media screen and (min-width: 768px) {
     width: 200px;
