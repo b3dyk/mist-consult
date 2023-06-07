@@ -17,3 +17,19 @@ export const Text = styled.p`
   font-size: ${(p) => p.theme.fontSize.m};
   line-height: 1.5;
 `;
+
+export const ContactLink = styled.a`
+  display: inline-block;
+  color: ${(p) => p.theme.color.textMain};
+  text-decoration: none;
+  font-weight: ${(p) => p.theme.fontWeight.medium};
+  font-size: ${(p) => p.theme.fontSize.m};
+  line-height: 1.5;
+
+  transition: color ${(p) => p.theme.animation.main};
+
+  :hover,
+  :focus {
+    color: ${(p) => p.theme.color.accent};
+  }
+`;
