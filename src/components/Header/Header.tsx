@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
-import { SVG } from "../../assets/images";
-import * as SC from "./Header.styled";
-import { Container } from "../../styles/common/Container.styled";
 import Button from "../Button";
-import { useResize } from "../../hooks/useResize";
 import MobileMenu from "../MobileMenu";
+import * as SC from "./Header.styled";
+import { SVG } from "../../assets/images";
+import { Container } from "../../styles/common/Container.styled";
+import { useResize } from "../../hooks/useResize";
 import { IconButton } from "../../styles/common";
 
-export const Header = () => {
+const Header = () => {
   const handleBurgerMenu = () => {
     const mobileMenu = document.querySelector("#mobileMenu") as HTMLElement;
     mobileMenu.classList.toggle("isOpen");
   };
-  const { isScreenMobile } = useResize();
+  const { isScreenMobile, isScreenDesktop } = useResize();
 
   return (
     <SC.Header>
@@ -41,6 +41,20 @@ export const Header = () => {
                 </SC.NavList>
               </nav>
               <Button />
+              {isScreenDesktop && (
+                <SC.ContsctsList>
+                  <li>
+                    <SC.ContactLink href="tel:+380951401440">
+                      +38 (095) 140 14 40
+                    </SC.ContactLink>
+                  </li>
+                  <li>
+                    <SC.ContactLink href="mailto:mist.consult.law@gmail.com">
+                      mist.consult.law@gmail.com
+                    </SC.ContactLink>
+                  </li>
+                </SC.ContsctsList>
+              )}
             </SC.Wrapper>
           )}
         </SC.HeaderContainer>
@@ -49,3 +63,5 @@ export const Header = () => {
     </SC.Header>
   );
 };
+
+export default Header;

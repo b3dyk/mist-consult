@@ -78,6 +78,28 @@ export const Wrapper = styled.div`
   gap: 32px;
 
   @media screen and (min-width: 1440px) {
-    gap: 80px;
+    gap: 40px;
+  }
+`;
+
+export const ContsctsList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`;
+
+export const ContactLink = styled.a`
+  display: inline-block;
+  color: ${(p) => p.theme.color.textMain};
+  text-decoration: none;
+  font-weight: ${(p) => p.theme.fontWeight.medium};
+  font-size: ${(p) => p.theme.fontSize.m};
+  line-height: 1.5;
+
+  transition: color ${(p) => p.theme.animation.main};
+
+  :hover,
+  :focus {
+    color: ${(p) => p.theme.color.accent};
   }
 `;
