@@ -4,6 +4,7 @@ export const AdvantagesSection = styled.section`
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
+  background-color: ${(p) => p.theme.color.bgGrey};
 
   @media screen and (min-width: 768px) {
     padding-top: 40px;
@@ -79,6 +80,7 @@ export const Circle = styled.div`
 
   border-radius: ${(p) => p.theme.radii.circle};
   border: 4px solid ${(p) => p.theme.color.accent};
+  background-color: ${(p) => p.theme.color.snowWhite};
 
   & > svg {
     width: 24px;
