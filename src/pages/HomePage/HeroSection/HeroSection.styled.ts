@@ -1,48 +1,53 @@
 import styled from "styled-components";
-import { IMG } from "../../../assets/images";
+import { SVG } from "../../../assets/images";
+import { Container } from "../../../styles/common";
 
 export const HeroSection = styled.section`
   margin: 0 auto;
-  background-color: ${(p) => p.theme.color.bgGrey};
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  padding-top: 67px;
+  padding-bottom: 66px;
 
-  padding-top: 136px;
-  padding-bottom: 159px;
-
-  background-image: url(${IMG.heroBgMob});
-
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image: url(${IMG.heroBgMob2x});
+  @media screen and (max-width: 767px) {
+    text-align: center;
   }
 
   @media screen and (min-width: 768px) {
-    padding-top: 140px;
-    padding-bottom: 115px;
+    padding-top: 96px;
+    padding-bottom: 95px;
     max-width: 768px;
-    background-image: url(${IMG.heroBgTab});
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: url(${IMG.heroBgTab2x});
-    }
   }
 
   @media screen and (min-width: 1440px) {
-    padding-top: 198px;
-    padding-bottom: 179px;
+    padding-top: 142px;
+    padding-bottom: 142px;
     max-width: 1440px;
-    background-image: url(${IMG.heroBgDesc});
+  }
+`;
 
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: url(${IMG.heroBgDesc2x});
-    }
+export const StyledContainer = styled(Container)`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 77px;
+  }
+`;
+
+export const Logo = styled(SVG.Logo)`
+  margin-bottom: 32px;
+
+  @media screen and (min-width: 768px) {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 356px;
+    height: 356px;
   }
 `;
 
@@ -86,10 +91,6 @@ export const Motivation = styled.p`
   font-size: ${(p) => p.theme.fontSize.m};
   line-height: 1.25;
   margin-bottom: 40px;
-
-  @media screen and (max-width: 767px) {
-    width: 288px;
-  }
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     width: 360px;

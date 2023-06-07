@@ -1,11 +1,3 @@
-import logo from "./logo/logo.jpg";
-import heroBgMob from "./background/heroMob.webp";
-import heroBgMob2x from "./background/heroMob2x.webp";
-import heroBgTab from "./background/heroTab.webp";
-import heroBgTab2x from "./background/heroTab2x.webp";
-import heroBgDesc from "./background/heroDesk.webp";
-import heroBgDesc2x from "./background/heroDesk2x.webp";
-
 import aboutUs from "./about/about-us-img.jpg";
 import aboutUsMob from "./about/about-us-mob.webp";
 import aboutUsMob2x from "./about/about-us-mob2x.webp";
@@ -71,6 +63,7 @@ import { ReactComponent as Chevron } from "./svg/chevron.svg";
 import { ReactComponent as DoubleChevron } from "./svg/doubleChevron.svg";
 import { ReactComponent as Up } from "./svg/up.svg";
 import { ReactComponent as Mist } from "./svg/mist.svg";
+import { ReactComponent as Logo } from "./svg/logo.svg";
 
 interface IIMG {
   [key: string]: string;
@@ -81,13 +74,6 @@ interface ISVG {
 }
 
 export const IMG: IIMG = {
-  logo,
-  heroBgMob,
-  heroBgMob2x,
-  heroBgTab,
-  heroBgTab2x,
-  heroBgDesc,
-  heroBgDesc2x,
   aboutUs,
   aboutUsMob,
   aboutUsMob2x,
@@ -149,4 +135,5 @@ export const SVG: ISVG = {
   DoubleChevron,
   Up,
   Mist,
+  Logo,
 };
