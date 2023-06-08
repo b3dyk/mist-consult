@@ -5,6 +5,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Loader from "../Loader";
 import ArrowUp from "../ArrowUp";
+import Modal from "../Modal";
 import { useResize } from "../../hooks/useResize";
 import * as SC from "./Layout.styled";
 
@@ -24,6 +25,8 @@ const Layout: React.FC = () => {
       <ArrowUp />
 
       {!isScreenMobile && <Footer />}
+
+      <Modal />
     </>
   );
 };
