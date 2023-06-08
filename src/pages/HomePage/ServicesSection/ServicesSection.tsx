@@ -1,7 +1,7 @@
-import { IMG } from "../../../assets/images";
 import Button from "../../../components/Button";
-import { Container } from "../../../styles/common";
 import * as SC from "./ServicesSection.styled";
+import { IMG } from "../../../assets/images";
+import { Container } from "../../../styles/common";
 import { options } from "../../../assets/data/options";
 
 export const ServicesSection = () => {
