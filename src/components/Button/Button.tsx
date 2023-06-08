@@ -1,7 +1,18 @@
-import { Button as MainButton } from "./Button.styled";
+// import { useModal } from "../../hooks/useModal";
+import * as SC from "./Button.styled";
 
 const Button = () => {
-  return <MainButton type="button">Замовити послугу</MainButton>;
+  // const { open } = useModal("modal");
+
+  const openModal = () => {
+    const modal = document.getElementById("modal") as HTMLDialogElement;
+    modal.showModal();
+  };
+  return (
+    <SC.Button type="button" onClick={openModal}>
+      Замовити послугу
+    </SC.Button>
+  );
 };
 
 export default Button;
