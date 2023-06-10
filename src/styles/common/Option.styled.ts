@@ -25,9 +25,11 @@ export const Option = styled.section<IOption>`
 `;
 
 export const Wrapper = styled.div`
-  border-radius: ${(p) => p.theme.radii.normal};
+  border-top-right-radius: ${(p) => p.theme.radii.normal};
+  border-top-left-radius: ${(p) => p.theme.radii.normal};
+  border: 3px solid ${(p) => p.theme.color.accent};
+  border-bottom: none;
   overflow: hidden;
-  margin-bottom: 20px;
 `;
 
 export const StyledIconBtn = styled(IconButton)`
@@ -64,7 +66,9 @@ export const StyledDoubleChevron = styled(SVG.DoubleChevron)<IProps>`
 export const ListWrapper = styled.div<IProps>`
   position: relative;
   border: 3px solid ${(p) => p.theme.color.accent};
-  border-radius: ${(p) => p.theme.radii.normal};
+  border-top: none;
+  border-bottom-left-radius: ${(p) => p.theme.radii.normal};
+  border-bottom-right-radius: ${(p) => p.theme.radii.normal};
   padding-top: 40px;
   padding-bottom: 40px;
   padding-left: 8px;
