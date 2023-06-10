@@ -5,8 +5,8 @@ export const Modal = styled.dialog`
   position: relative;
   padding-top: 40px;
   padding-bottom: 40px;
-  padding-left: 59px;
-  padding-right: 59px;
+  padding-left: 32px;
+  padding-right: 32px;
   border: 3px solid ${(p) => p.theme.color.accent};
   border-radius: ${(p) => p.theme.radii.large};
   text-align: center;
@@ -14,6 +14,11 @@ export const Modal = styled.dialog`
 
   ::backdrop {
     backdrop-filter: blur(4px);
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-left: 60px;
+    padding-right: 60px;
   }
 `;
 

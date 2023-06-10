@@ -25,7 +25,7 @@ const Modal = () => {
       <SC.Title>Зацікавили послуги?</SC.Title>
       <SC.Text>Введіть ваші контактні дані та ми вам зателефонуємо</SC.Text>
 
-      <Form />
+      <Form modal={true} />
 
       <SC.Cta>або зателефонуйте нам</SC.Cta>
       <SC.Number href="tel:+380951401440">+38 (095) 140 14 40</SC.Number>
