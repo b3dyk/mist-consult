@@ -12,7 +12,7 @@ const Header = () => {
     const mobileMenu = document.querySelector("#mobileMenu") as HTMLElement;
     mobileMenu.classList.toggle("isOpen");
   };
-  const { isScreenMobile, isScreenDesktop } = useResize();
+  const { isScreenMobile } = useResize();
 
   return (
     <SC.Header>
@@ -41,20 +41,6 @@ const Header = () => {
                 </SC.NavList>
               </nav>
               <Button />
-              {isScreenDesktop && (
-                <SC.ContsctsList>
-                  <li>
-                    <SC.ContactLink href="tel:+380951401440">
-                      +38 (095) 140 14 40
-                    </SC.ContactLink>
-                  </li>
-                  <li>
-                    <SC.ContactLink href="mailto:mist.consult.law@gmail.com">
-                      mist.consult.law@gmail.com
-                    </SC.ContactLink>
-                  </li>
-                </SC.ContsctsList>
-              )}
             </SC.Wrapper>
           )}
         </SC.HeaderContainer>

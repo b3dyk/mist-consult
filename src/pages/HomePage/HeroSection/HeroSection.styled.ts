@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import { SVG } from "../../../assets/images";
-import { Container } from "../../../styles/common";
 
 export const HeroSection = styled.section`
   margin: 0 auto;
   padding-top: 67px;
-  padding-bottom: 66px;
+  padding-bottom: 30px;
 
   @media screen and (max-width: 767px) {
     text-align: center;
@@ -13,26 +12,30 @@ export const HeroSection = styled.section`
 
   @media screen and (min-width: 768px) {
     padding-top: 96px;
-    padding-bottom: 95px;
+    padding-bottom: 24px;
     max-width: 768px;
   }
 
   @media screen and (min-width: 1440px) {
     padding-top: 142px;
-    padding-bottom: 142px;
+    padding-bottom: 49px;
     max-width: 1440px;
   }
 `;
 
-export const StyledContainer = styled(Container)`
+export const Thumb = styled.div`
+  margin-bottom: 40px;
+
   @media screen and (min-width: 768px) {
     display: flex;
     align-items: center;
     gap: 32px;
+    margin-bottom: 46px;
   }
 
   @media screen and (min-width: 1440px) {
     gap: 77px;
+    margin-bottom: 63px;
   }
 `;
 
@@ -51,6 +54,8 @@ export const Logo = styled(SVG.Logo)`
     height: 356px;
   }
 `;
+
+export const HeroWrapper = styled.div``;
 
 export const SubHeading = styled.h2`
   font-weight: ${(p) => p.theme.fontWeight.bold};
@@ -105,5 +110,43 @@ export const Motivation = styled.p`
   @media screen and (min-width: 1440px) {
     font-size: ${(p) => p.theme.fontSize.xxxl};
     line-height: 1.208;
+  }
+`;
+
+export const ContsctsList = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 40px;
+  }
+`;
+
+export const ContactLink = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: ${(p) => p.theme.color.textMain};
+  text-decoration: none;
+  font-weight: ${(p) => p.theme.fontWeight.semiBold};
+  font-size: ${(p) => p.theme.fontSize.m};
+  line-height: 1.5;
+
+  transition: color ${(p) => p.theme.animation.main};
+
+  @media screen and (min-width: 1440px) {
+    font-size: ${(p) => p.theme.fontSize.xl};
+    gap: 16px;
+  }
+
+  :hover,
+  :focus {
+    color: ${(p) => p.theme.color.accent};
   }
 `;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { SVG } from "../../assets/images";
 
 export const Header = styled.header`
+  border-bottom: 1px solid ${(p) => p.theme.color.accent};
   box-shadow: 0px 4px 12px rgba(202, 202, 202, 0.25);
   position: fixed;
   top: 0;
@@ -79,27 +80,5 @@ export const Wrapper = styled.div`
 
   @media screen and (min-width: 1440px) {
     gap: 40px;
-  }
-`;
-
-export const ContsctsList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-`;
-
-export const ContactLink = styled.a`
-  display: inline-block;
-  color: ${(p) => p.theme.color.textMain};
-  text-decoration: none;
-  font-weight: ${(p) => p.theme.fontWeight.medium};
-  font-size: ${(p) => p.theme.fontSize.m};
-  line-height: 1.5;
-
-  transition: color ${(p) => p.theme.animation.main};
-
-  :hover,
-  :focus {
-    color: ${(p) => p.theme.color.accent};
   }
 `;
