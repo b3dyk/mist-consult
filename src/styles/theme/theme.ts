@@ -60,4 +60,8 @@ export const globalStyles: ITheme = {
     circle: "50%",
     round: "100vw",
   },
+
+  border: {
+    regular: "3px solid #29974e",
+  },
 };
