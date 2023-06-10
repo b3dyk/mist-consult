@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { IFormProps } from "./Form";
 
-export const Form = styled.form`
+export const Form = styled.form<IFormProps>`
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-bottom: 32px;
+  margin-bottom: ${(p) => (p.modal ? "32px" : "0")};
 `;
 
 export const Label = styled.label`
@@ -38,7 +39,7 @@ export const Input = styled.input`
 
   ::placeholder {
     opacity: 0;
-    transition: opacity var(--anim);
+    transition: opacity ${(p) => p.theme.animation.main};
   }
 
   :not(:placeholder-shown) + span {

@@ -1,6 +1,10 @@
 import { useState } from "react";
 import * as SC from "./Form.styled";
 
+export interface IFormProps {
+  modal: boolean;
+}
+
 interface IState {
   [key: string]: string;
 }
@@ -10,7 +14,7 @@ const initialState: IState = {
   phone: "",
 };
 
-const Form = () => {
+const Form = ({ modal }: IFormProps) => {
   const [data, setData] = useState(initialState);
 
   const handleChange = ({
@@ -25,7 +29,7 @@ const Form = () => {
   };
 
   return (
-    <SC.Form method="dialog" onSubmit={handleSubmit}>
+    <SC.Form method="dialog" onSubmit={handleSubmit} modal={modal}>
       <SC.Label>
         <SC.Input
           type="text"
