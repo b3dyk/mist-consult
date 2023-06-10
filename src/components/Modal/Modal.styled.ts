@@ -57,98 +57,6 @@ export const Text = styled.p`
   }
 `;
 
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-bottom: 32px;
-`;
-
-export const Label = styled.label`
-  position: relative;
-
-  :focus-within > input {
-    border: 1px solid ${(p) => p.theme.color.accent};
-    outline: 1px solid transparent;
-  }
-
-  :focus-within > input::placeholder {
-    opacity: 1;
-  }
-
-  :focus-within > span {
-    transform: translate(-10px, -200%) scale(1);
-    color: ${(p) => p.theme.color.accent};
-  }
-`;
-
-export const Input = styled.input`
-  padding: 12px 16px;
-  width: 100%;
-
-  border: 1px solid ${(p) => p.theme.color.textGrey};
-  border-radius: ${(p) => p.theme.radii.normal};
-
-  font-weight: ${(p) => p.theme.fontWeight.regular};
-  font-size: ${(p) => p.theme.fontSize.m};
-  line-height: 1.25;
-
-  ::placeholder {
-    opacity: 0;
-    transition: opacity var(--anim);
-  }
-`;
-
-export const LabelText = styled.span`
-  position: absolute;
-  top: 50%;
-  left: 16px;
-
-  transform: translateY(-50%) scale(1.2);
-  font-size: ${(p) => p.theme.fontSize.m};
-  line-height: 1.25;
-  color: ${(p) => p.theme.color.textMain};
-
-  transition: transform ${(p) => p.theme.animation.main};
-`;
-
-export const Button = styled.button`
-  padding-top: 14px;
-  padding-bottom: 14px;
-  padding-left: 24px;
-  padding-right: 24px;
-
-  cursor: pointer;
-  border: 3px solid transparent;
-  border-radius: ${(p) => p.theme.radii.normal};
-  background-color: ${(p) => p.theme.color.accent};
-  color: ${(p) => p.theme.color.white};
-
-  font-weight: ${(p) => p.theme.fontWeight.semiBold};
-  font-size: ${(p) => p.theme.fontSize.m};
-  line-height: 1.25;
-
-  transition: background-color ${(p) => p.theme.animation.main},
-    transform ${(p) => p.theme.animation.main},
-    border-color ${(p) => p.theme.animation.main};
-
-  :hover {
-    background-color: ${(p) => p.theme.color.white};
-    border: 3px solid;
-    border-color: ${(p) => p.theme.color.accent};
-    color: ${(p) => p.theme.color.accent};
-  }
-
-  :active {
-    transform: scale(0.99);
-  }
-
-  @media screen and (min-width: 768px) {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-`;
-
 export const Cta = styled.p`
   font-weight: ${(p) => p.theme.fontWeight.medium};
   font-size: ${(p) => p.theme.fontSize.m};
@@ -156,13 +64,21 @@ export const Cta = styled.p`
   margin-bottom: 8px;
 `;
 
-export const Number = styled.p`
+export const Number = styled.a`
+  text-decoration: none;
+  color: ${(p) => p.theme.color.textMain};
   font-weight: ${(p) => p.theme.fontWeight.medium};
   font-size: ${(p) => p.theme.fontSize.xl};
   line-height: 1.25;
+  transition: color ${(p) => p.theme.animation.main};
 
   @media screen and (min-width: 768px) {
     font-size: ${(p) => p.theme.fontSize.xxxl};
     line-height: 1.208;
+  }
+
+  :hover,
+  :focus {
+    color: ${(p) => p.theme.color.accent};
   }
 `;
