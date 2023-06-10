@@ -60,6 +60,7 @@ import { ReactComponent as EllipseTop } from "./svg/ellipseTop.svg";
 import { ReactComponent as EllipseBottom } from "./svg/ellipseBottom.svg";
 import { ReactComponent as Envelope } from "./svg/envelope.svg";
 import { ReactComponent as Phone } from "./svg/phone.svg";
+import { ReactComponent as Pin } from "./svg/pin.svg";
 
 interface IIMG {
   [key: string]: string;
@@ -129,4 +130,5 @@ export const SVG: ISVG = {
   EllipseBottom,
   Envelope,
   Phone,
+  Pin,
 };
