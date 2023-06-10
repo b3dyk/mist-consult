@@ -12,6 +12,7 @@ const ServicesPage: React.FC = () => {
   return (
     <>
       <Container>
+        <SC.Subtitle>Послуги</SC.Subtitle>
         <SC.Title>Послуги</SC.Title>
         {Object.keys(options).map((item, idx) => (
           <Option key={idx} title={item} idx={idx + 1} />

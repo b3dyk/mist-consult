@@ -11,11 +11,11 @@ interface IOption {
 }
 
 export const Option = styled.section<IOption>`
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 40px;
 
   @media screen and (min-width: 768px) {
-    padding-top: 20px;
+    padding-top: 32px;
     padding-bottom: 20px;
   }
   @media screen and (min-width: 1440px) {
