@@ -79,3 +79,28 @@ button {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+[data-scroll-lock] header {
+  padding-right: var(--scrollbar-compensation);
+}
+
+[data-scroll-lock] .visible {
+  margin-right: var(--scrollbar-compensation);
+}
+
+.Toastify__toast {
+  border: 3px solid #29974e;
+}
+
+.Toastify__toast--rtl {
+  background-color: #f4f4f4;
+  border-radius: 16px;
+}
+
+.Toastify__toast-body {
+  color: #323232;
+  font-family: montserrat;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.25;
+}
