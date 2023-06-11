@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
+import { ToastContainer } from "react-toastify";
 
 import Header from "../Header";
 import Footer from "../Footer";
 import Loader from "../Loader";
 import ArrowUp from "../ArrowUp";
-import Modal from "../Modal";
 import { useResize } from "../../hooks/useResize";
 import * as SC from "./Layout.styled";
 
@@ -26,7 +26,18 @@ const Layout: React.FC = () => {
 
       {!isScreenMobile && <Footer />}
 
-      <Modal />
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        limit={3}
+      />
     </>
   );
 };
