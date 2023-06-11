@@ -1,89 +1,55 @@
 import styled from "styled-components";
 import { SVG } from "../../assets/images";
 
-export const Modal = styled.dialog`
-  position: relative;
+export const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+  overflow-y: auto;
+  backdrop-filter: blur(2.5px);
+  padding: 8px;
+`;
+
+export const Inner = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   padding-top: 40px;
   padding-bottom: 40px;
   padding-left: 32px;
   padding-right: 32px;
-  border: 3px solid ${(p) => p.theme.color.accent};
-  border-radius: ${(p) => p.theme.radii.large};
   text-align: center;
   background-color: ${(p) => p.theme.color.bgGrey};
 
-  ::backdrop {
-    backdrop-filter: blur(4px);
-  }
+  max-width: 518px;
+  width: 90%;
 
-  @media screen and (min-width: 768px) {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
+  max-height: 90%;
+  border-radius: ${(props) => props.theme.radii.normal};
+  border: ${(p) => p.theme.border.regular};
 `;
 
-export const EllipseTop = styled(SVG.EllipseTop)`
+export const CloseBtn = styled.button`
   position: absolute;
-  top: 0;
-  left: 0;
-`;
-
-export const EllipseBottom = styled(SVG.EllipseBottom)`
-  position: absolute;
-  bottom: 0;
-  right: 0;
-`;
-
-export const Title = styled.h2`
-  font-weight: ${(p) => p.theme.fontWeight.bold};
-  font-size: ${(p) => p.theme.fontSize.xxl};
-  line-height: 1.219;
-  color: ${(p) => p.theme.color.accent};
-  margin-bottom: 8px;
-
-  @media screen and (min-width: 768px) {
-    font-size: ${(p) => p.theme.fontSize.bxl};
-    line-height: 1.219;
-  }
-`;
-
-export const Text = styled.p`
-  font-weight: ${(p) => p.theme.fontWeight.medium};
-  font-size: ${(p) => p.theme.fontSize.xl};
-  line-height: 1.208;
-  max-width: 425px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 48px;
-
-  @media screen and (min-width: 768px) {
-    font-size: ${(p) => p.theme.fontSize.xxxl};
-    line-height: 1.208;
-  }
-`;
-
-export const Cta = styled.p`
-  font-weight: ${(p) => p.theme.fontWeight.medium};
-  font-size: ${(p) => p.theme.fontSize.m};
-  line-height: 1.25;
-  margin-bottom: 8px;
-`;
-
-export const Number = styled.a`
-  text-decoration: none;
+  top: 8px;
+  right: 8px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
   color: ${(p) => p.theme.color.textMain};
-  font-weight: ${(p) => p.theme.fontWeight.medium};
-  font-size: ${(p) => p.theme.fontSize.xl};
-  line-height: 1.25;
   transition: color ${(p) => p.theme.animation.main};
 
-  @media screen and (min-width: 768px) {
-    font-size: ${(p) => p.theme.fontSize.xxxl};
-    line-height: 1.208;
-  }
-
-  :hover,
-  :focus {
+  :hover {
     color: ${(p) => p.theme.color.accent};
   }
+`;
+
+export const CloseIcon = styled(SVG.Close)`
+  fill: currentColor;
 `;

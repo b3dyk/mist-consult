@@ -1,41 +1,26 @@
 import styled from "styled-components";
 import { SVG } from "../../assets/images";
 
-export const Button = styled.button`
-  padding: 14px 32px;
+export const Modal = styled.dialog`
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border: 3px solid ${(p) => p.theme.color.accent};
+  border-radius: ${(p) => p.theme.radii.large};
+  text-align: center;
+  background-color: ${(p) => p.theme.color.bgGrey};
 
-  cursor: pointer;
-  border: 3px solid transparent;
-  border-radius: ${(p) => p.theme.radii.normal};
-  background-color: ${(p) => p.theme.color.accent};
-  color: ${(p) => p.theme.color.white};
-
-  font-weight: ${(p) => p.theme.fontWeight.semiBold};
-  font-size: ${(p) => p.theme.fontSize.m};
-  line-height: 1.25;
-
-  transition: background-color ${(p) => p.theme.animation.main},
-    transform ${(p) => p.theme.animation.main},
-    border-color ${(p) => p.theme.animation.main};
-
-  :hover {
-    background-color: ${(p) => p.theme.color.white};
-    border: 3px solid;
-    border-color: ${(p) => p.theme.color.accent};
-    color: ${(p) => p.theme.color.accent};
+  ::backdrop {
+    backdrop-filter: blur(4px);
   }
 
-  :active {
-    transform: scale(0.99);
-  }
-
-  @media screen and (max-width: 767px) {
-    margin-left: auto;
-    margin-right: auto;
+  @media screen and (min-width: 768px) {
+    padding-left: 60px;
+    padding-right: 60px;
   }
 `;
-
-//============================================================================================
 
 export const EllipseTop = styled(SVG.EllipseTop)`
   position: absolute;

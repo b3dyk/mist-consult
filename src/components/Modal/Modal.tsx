@@ -1,36 +1,51 @@
-// import { useModal } from "../../hooks/useModal";
+import React, { useEffect, MouseEvent } from "react";
+import { createPortal } from "react-dom";
+
 import * as SC from "./Modal.styled";
-import Form from "../Form";
+import { SVG } from "../../assets/images";
+import { useScrollLock } from "../../hooks/useScrollLock";
 
-const Modal = () => {
-  // const { close } = useModal(".modal");
+const modalRoot = document.querySelector("#modal-root") as HTMLElement;
 
-  const handleClose = (e: React.MouseEvent<HTMLDialogElement>) => {
-    const modal = document.getElementById("modal") as HTMLDialogElement;
-    const dialogDimensions = modal.getBoundingClientRect();
-    if (
-      e.clientX < dialogDimensions.left ||
-      e.clientX > dialogDimensions.right ||
-      e.clientY < dialogDimensions.top ||
-      e.clientY > dialogDimensions.bottom
-    ) {
-      modal.close();
+interface IProps {
+  toggleModal: () => void;
+  children: React.ReactNode;
+}
+
+export const Modal = ({ toggleModal, children }: IProps) => {
+  const { lockScroll, unlockScroll } = useScrollLock();
+
+  useEffect(() => {
+    const closeModal = (evt: Event): void => {
+      if (evt instanceof KeyboardEvent && evt.code === "Escape") {
+        toggleModal();
+      }
+    };
+    window.addEventListener("keydown", closeModal);
+    lockScroll();
+
+    return () => {
+      window.removeEventListener("keydown", closeModal);
+      unlockScroll();
+    };
+  }, [toggleModal]);
+
+  const closeOnClick = (evt: MouseEvent<HTMLElement>) => {
+    if (evt.target === evt.currentTarget) {
+      toggleModal();
     }
   };
 
-  return (
-    <SC.Modal id="modal" className="modal" onClick={handleClose}>
-      <SC.EllipseTop />
-      <SC.EllipseBottom />
-      <SC.Title>Зацікавили послуги?</SC.Title>
-      <SC.Text>Введіть ваші контактні дані та ми вам зателефонуємо</SC.Text>
+  return createPortal(
+    <SC.Overlay onClick={closeOnClick}>
+      <SC.Inner>
+        {children}
+        <SC.CloseBtn type="button" onClick={toggleModal}>
+          <SC.CloseIcon />
+        </SC.CloseBtn>
+      </SC.Inner>
+    </SC.Overlay>,
 
-      <Form modal={true} />
-
-      <SC.Cta>або зателефонуйте нам</SC.Cta>
-      <SC.Number href="tel:+380951401440">+38 (095) 140 14 40</SC.Number>
-    </SC.Modal>
+    modalRoot
   );
 };
-
-export default Modal;

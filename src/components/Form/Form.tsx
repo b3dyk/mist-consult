@@ -1,8 +1,10 @@
 import { useState } from "react";
 import * as SC from "./Form.styled";
+import { toast } from "react-toastify";
 
 export interface IFormProps {
   modal: boolean;
+  toggleModal?: () => void;
 }
 
 interface IState {
@@ -14,8 +16,10 @@ const initialState: IState = {
   phone: "",
 };
 
-const Form = ({ modal }: IFormProps) => {
+const Form = ({ modal, toggleModal }: IFormProps) => {
   const [data, setData] = useState(initialState);
+  const notifyError = (message: string) => toast.error(message);
+  const notifySuccess = (message: string) => toast.success(message);
 
   const handleChange = ({
     currentTarget: { name, value },
@@ -24,12 +28,28 @@ const Form = ({ modal }: IFormProps) => {
   };
 
   const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
-    console.log(data);
+    evt.preventDefault();
+
+    const name = data.name.trim();
+    const phone = data.phone.trim();
+
+    if (!name || !phone) {
+      notifyError("Будь ласка, заповніть всі поля");
+      return;
+    }
+
+    notifySuccess("Дякуємо! Наші працівники скоро зв'яжуться з вами");
+
+    console.log({ name, phone });
     setData(initialState);
+
+    if (toggleModal) {
+      toggleModal();
+    }
   };
 
   return (
-    <SC.Form method="dialog" onSubmit={handleSubmit} modal={modal}>
+    <SC.Form onSubmit={handleSubmit} modal={modal}>
       <SC.Label>
         <SC.Input
           type="text"
@@ -38,6 +58,7 @@ const Form = ({ modal }: IFormProps) => {
           placeholder="Андрій Андрієнко"
           onChange={handleChange}
           required
+          autoFocus
         />
         <SC.LabelText>Ім'я</SC.LabelText>
       </SC.Label>
@@ -52,7 +73,7 @@ const Form = ({ modal }: IFormProps) => {
         />
         <SC.LabelText>Телефон</SC.LabelText>
       </SC.Label>
-      <SC.Button type="submit">Замовити дзвінок</SC.Button>
+      <SC.Button>Замовити дзвінок</SC.Button>
     </SC.Form>
   );
 };

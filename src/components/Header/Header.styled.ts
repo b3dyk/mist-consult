@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { SVG } from "../../assets/images";
 
 export const Header = styled.header`
-  border-bottom: 1px solid ${(p) => p.theme.color.accent};
-  box-shadow: 0px 4px 12px rgba(202, 202, 202, 0.25);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  border-bottom: 1px solid ${(p) => p.theme.color.accent};
+  box-shadow: 0px 4px 12px rgba(202, 202, 202, 0.25);
   background-color: ${(p) => p.theme.color.snowWhite};
   padding-top: 4px;
   padding-bottom: 4px;
