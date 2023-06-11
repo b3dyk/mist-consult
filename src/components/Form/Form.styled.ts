@@ -4,7 +4,7 @@ import { IFormProps } from "./Form";
 export const Form = styled.form<IFormProps>`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 40px;
   margin-bottom: ${(p) => (p.modal ? "32px" : "0")};
 `;
 

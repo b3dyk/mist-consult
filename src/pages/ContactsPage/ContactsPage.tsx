@@ -34,11 +34,9 @@ const ContactsPage: React.FC = () => {
             <SC.ContactItem>
               <SC.ContactTitleWrapper>
                 <SC.Pin />
-                <SC.ContsctTitle>Адреса</SC.ContsctTitle>
+                <SC.ContsctTitle>Адреса в Києві</SC.ContsctTitle>
               </SC.ContactTitleWrapper>
-              <SC.Contact>
-                м. Київ вул. Михайла Омеляновича-Павленка, 13
-              </SC.Contact>
+              <SC.Contact>вул. Михайла Омеляновича-Павленка, 13</SC.Contact>
             </SC.ContactItem>
           </SC.ContactsList>
         </SC.ContactsSection>

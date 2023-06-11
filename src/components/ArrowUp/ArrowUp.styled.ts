@@ -9,10 +9,10 @@ export const ArrowUp = styled(IconButton)`
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 80px;
-  max-width: 80px;
-  border-radius: 50px;
-  padding: 16px;
+  max-height: 50px;
+  max-width: 50px;
+  border-radius: 50%;
+  padding: 8px;
   opacity: 0;
   pointer-events: none;
 
@@ -23,5 +23,11 @@ export const ArrowUp = styled(IconButton)`
   &.visible {
     opacity: 0.8;
     pointer-events: initial;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-height: 80px;
+    max-width: 80px;
+    padding: 16px;
   }
 `;
