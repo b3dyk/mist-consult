@@ -156,13 +156,19 @@ export const ContsctTitle = styled.h3`
   }
 `;
 
-export const Contact = styled.p`
+export const Contact = styled.a`
   font-weight: ${(p) => p.theme.fontWeight.medium};
   font-size: ${(p) => p.theme.fontSize.m};
   line-height: 1.5;
+  text-decoration: none;
+  color: ${(p) => p.theme.color.textMain};
 
   @media screen and (min-width: 768px) {
     font-size: ${(p) => p.theme.fontSize.xl};
+  }
+
+  :hover {
+    color: ${(p) => p.theme.color.accent};
   }
 `;
 
