@@ -21,7 +21,7 @@ export const ArrowUp = styled(IconButton)`
   transition: opacity ${(p) => p.theme.animation.long};
 
   &.visible {
-    opacity: 1;
+    opacity: 0.8;
     pointer-events: initial;
   }
 `;
