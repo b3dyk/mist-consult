@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { Container } from "../../styles/common";
 
 export const MobileMenu = styled.div`
   position: absolute;
@@ -72,4 +71,23 @@ export const StyledLink = styled(NavLink)`
       color: ${(p) => p.theme.color.accent};
     }
   }
+`;
+
+export const ContsctsList = styled.ul`
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 100px;
+`;
+
+export const ContactLink = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: ${(p) => p.theme.color.textMain};
+  text-decoration: none;
+  font-weight: ${(p) => p.theme.fontWeight.semiBold};
+  font-size: ${(p) => p.theme.fontSize.m};
+  line-height: 1.5;
 `;

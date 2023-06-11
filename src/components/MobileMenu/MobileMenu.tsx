@@ -35,6 +35,20 @@ export const MobileMenu = ({ toggleMenu }: MobileMenuProps) => {
             </li>
           </SC.List>
         </nav>
+        <SC.ContsctsList>
+          <li>
+            <SC.ContactLink href="tel:+380951401440">
+              <SVG.Phone />
+              +38 (095) 140 14 40
+            </SC.ContactLink>
+          </li>
+          <li>
+            <SC.ContactLink href="mailto:mist.consult.law@gmail.com">
+              <SVG.Envelope />
+              mist.consult.law@gmail.com
+            </SC.ContactLink>
+          </li>
+        </SC.ContsctsList>
       </Container>
     </SC.MobileMenu>
   );

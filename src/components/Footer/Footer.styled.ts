@@ -18,15 +18,33 @@ export const Text = styled.p`
   line-height: 1.5;
 `;
 
+export const ContsctsList = styled.ul`
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 8px;
+
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+    gap: 40px;
+  }
+`;
+
 export const ContactLink = styled.a`
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: ${(p) => p.theme.color.textMain};
   text-decoration: none;
-  font-weight: ${(p) => p.theme.fontWeight.medium};
+  font-weight: ${(p) => p.theme.fontWeight.semiBold};
   font-size: ${(p) => p.theme.fontSize.m};
   line-height: 1.5;
 
   transition: color ${(p) => p.theme.animation.main};
+
+  @media screen and (min-width: 1440px) {
+    gap: 16px;
+  }
 
   :hover,
   :focus {
