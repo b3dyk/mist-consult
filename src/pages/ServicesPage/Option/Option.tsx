@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IMG } from "../../../assets/images";
 import Button from "../../../components/Button";
-import * as SC from "../../../styles/common/Option.styled";
+import * as SC from "./Option.styled";
 import { options } from "../../../assets/data/options";
 import { useWindowScrollPositions } from "../../../hooks/useWindowScrollPosition";
 

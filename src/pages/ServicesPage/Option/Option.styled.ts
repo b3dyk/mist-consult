@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { SVG } from "../../assets/images";
-import { IconButton } from "./IconButton";
+import { SVG } from "../../../assets/images";
+import { IconButton } from "../../../styles/common/IconButton";
 
 interface IProps {
   $expanded: boolean;
