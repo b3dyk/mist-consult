@@ -5,7 +5,7 @@ import CountUp from "react-countup";
 
 export const AdvantagesSection = () => {
   const years = Math.floor(
-    (Date.now() - 1577833200000) / (1000 * 60 * 60 * 24 * 365)
+    (Date.now() - 1325377584000) / (1000 * 60 * 60 * 24 * 365)
   );
 
   return (
@@ -21,7 +21,7 @@ export const AdvantagesSection = () => {
             </SC.Circle>
             <div>
               <SC.CardTitle>
-                <CountUp start={0} end={years} delay={1} duration={3} /> роки
+                <CountUp start={0} end={years} delay={1} duration={3} /> років
               </SC.CardTitle>
               <SC.CardDesc>надаємо послуги в сфері земледіяльності</SC.CardDesc>
             </div>
