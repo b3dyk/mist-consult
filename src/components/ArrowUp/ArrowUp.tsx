@@ -12,6 +12,7 @@ const ArrowUp = () => {
   return (
     <SC.ArrowUp
       type="button"
+      aria-label="move up"
       onClick={goUp}
       className={scrollY > 100 ? "visible" : ""}
     >

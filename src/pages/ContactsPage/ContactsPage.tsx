@@ -22,7 +22,7 @@ const ContactsPage: React.FC = () => {
                 <SC.Phone />
                 <SC.ContsctTitle>Телефон</SC.ContsctTitle>
               </SC.ContactTitleWrapper>
-              <SC.Contact href="tel:+380951401440">
+              <SC.Contact href="tel:+380951401440" aria-label="phone">
                 +38 095 140 14 40
               </SC.Contact>
             </SC.ContactItem>
@@ -31,7 +31,10 @@ const ContactsPage: React.FC = () => {
                 <SC.Envelope />
                 <SC.ContsctTitle>Пошта</SC.ContsctTitle>
               </SC.ContactTitleWrapper>
-              <SC.Contact href="mailto:mist.consult.law@gmail.com">
+              <SC.Contact
+                href="mailto:mist.consult.law@gmail.com"
+                aria-label="email"
+              >
                 mist.consult.law@gmail.com
               </SC.Contact>
             </SC.ContactItem>
@@ -40,7 +43,7 @@ const ContactsPage: React.FC = () => {
                 <SC.Pin />
                 <SC.ContsctTitle>Адреса в Києві</SC.ContsctTitle>
               </SC.ContactTitleWrapper>
-              <SC.Contact href="#map">
+              <SC.Contact href="#map" aria-label="map">
                 вул. Михайла Омеляновича-Павленка, 13
               </SC.Contact>
             </SC.ContactItem>

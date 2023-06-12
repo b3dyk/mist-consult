@@ -26,11 +26,15 @@ const Header = () => {
     <SC.Header>
       <Container>
         <SC.HeaderContainer>
-          <Link to="/">
+          <Link to="/" aria-label="main" rel="canonical">
             <SC.Logo />
           </Link>
           {isScreenMobile ? (
-            <IconButton type="button" onClick={handleBurgerMenu}>
+            <IconButton
+              type="button"
+              onClick={handleBurgerMenu}
+              aria-label="open menu"
+            >
               <SVG.Burger />
             </IconButton>
           ) : (
@@ -38,13 +42,19 @@ const Header = () => {
               <nav>
                 <SC.NavList>
                   <li>
-                    <SC.StyledLink to="/">Головна</SC.StyledLink>
+                    <SC.StyledLink to="/" aria-label="main" rel="canonical">
+                      Головна
+                    </SC.StyledLink>
                   </li>
                   <li>
-                    <SC.StyledLink to="services">Послуги</SC.StyledLink>
+                    <SC.StyledLink to="services" aria-label="services">
+                      Послуги
+                    </SC.StyledLink>
                   </li>
                   <li>
-                    <SC.StyledLink to="contacts">Контакти</SC.StyledLink>
+                    <SC.StyledLink to="contacts" aria-label="contacts">
+                      Контакти
+                    </SC.StyledLink>
                   </li>
                 </SC.NavList>
               </nav>

@@ -64,6 +64,7 @@ export const Option = ({ title, idx }: IOptionsProps) => {
         </picture>
         <SC.StyledIconBtn
           type="button"
+          aria-label="expand"
           onClick={handleExpand}
           disabled={optionValues.length < 5}
         >

@@ -12,7 +12,11 @@ export const MobileMenu = ({ toggleMenu }: MobileMenuProps) => {
       <Container>
         <SC.Wrapper>
           <SC.MenuTitle>Міст Консалт</SC.MenuTitle>
-          <IconButton type="button" onClick={toggleMenu}>
+          <IconButton
+            type="button"
+            onClick={toggleMenu}
+            aria-label="close menu"
+          >
             <SVG.Close />
           </IconButton>
         </SC.Wrapper>

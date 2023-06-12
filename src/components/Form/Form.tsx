@@ -57,8 +57,8 @@ const Form = ({ modal, toggleModal }: IFormProps) => {
           value={data.name}
           placeholder="Андрій Андрієнко"
           onChange={handleChange}
+          autoFocus={modal ? true : false}
           required
-          autoFocus
         />
         <SC.LabelText>Ім'я</SC.LabelText>
       </SC.Label>
@@ -73,7 +73,7 @@ const Form = ({ modal, toggleModal }: IFormProps) => {
         />
         <SC.LabelText>Телефон</SC.LabelText>
       </SC.Label>
-      <SC.Button>Замовити дзвінок</SC.Button>
+      <SC.Button aria-label="form submit">Замовити дзвінок</SC.Button>
     </SC.Form>
   );
 };

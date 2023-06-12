@@ -10,13 +10,16 @@ export const Footer = () => {
           <SC.Text>&#169; Mist Consult 2023. All rights reserved</SC.Text>
           <SC.ContsctsList>
             <li>
-              <SC.ContactLink href="tel:+380951401440">
+              <SC.ContactLink href="tel:+380951401440" aria-label="phone">
                 <SVG.Phone />
                 +38 (095) 140 14 40
               </SC.ContactLink>
             </li>
             <li>
-              <SC.ContactLink href="mailto:mist.consult.law@gmail.com">
+              <SC.ContactLink
+                href="mailto:mist.consult.law@gmail.com"
+                aria-label="email"
+              >
                 <SVG.Envelope />
                 mist.consult.law@gmail.com
               </SC.ContactLink>

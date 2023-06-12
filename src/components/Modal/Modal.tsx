@@ -40,7 +40,7 @@ export const Modal = ({ toggleModal, children }: IProps) => {
     <SC.Overlay onClick={closeOnClick}>
       <SC.Inner>
         {children}
-        <SC.CloseBtn type="button" onClick={toggleModal}>
+        <SC.CloseBtn type="button" onClick={toggleModal} aria-label="close">
           <SC.CloseIcon />
         </SC.CloseBtn>
       </SC.Inner>

@@ -2,17 +2,9 @@ import { useState } from "react";
 import * as SC from "./Button.styled";
 import Modal from "../Modal";
 import Form from "../Form";
-// import { useScrollLock } from "../../hooks/useScrollLock";
 
 const Button = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
-  // const { lockScroll, unlockScroll } = useScrollLock();
-
-  // const openModal = () => {
-  //   const modal = document.getElementById("modal") as HTMLDialogElement;
-  //   lockScroll();
-  //   modal.showModal();
-  // };
 
   const toggleModal = () => {
     setIsOpenModal((p) => !p);
@@ -20,7 +12,7 @@ const Button = () => {
 
   return (
     <>
-      <SC.Button type="button" onClick={toggleModal}>
+      <SC.Button type="button" onClick={toggleModal} aria-label="make order">
         Замовити послугу
       </SC.Button>
 
@@ -34,7 +26,9 @@ const Button = () => {
           <Form modal={true} toggleModal={toggleModal} />
 
           <SC.Cta>або зателефонуйте нам</SC.Cta>
-          <SC.Number href="tel:+380951401440">+38 (095) 140 14 40</SC.Number>
+          <SC.Number href="tel:+380951401440" aria-label="phone">
+            +38 (095) 140 14 40
+          </SC.Number>
         </Modal>
       )}
     </>

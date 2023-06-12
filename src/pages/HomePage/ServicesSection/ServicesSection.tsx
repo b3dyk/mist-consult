@@ -12,7 +12,7 @@ export const ServicesSection = () => {
         <SC.List>
           {Object.keys(options).map((item, idx) => (
             <SC.CardItem key={idx}>
-              <SC.CardLink to="services">
+              <SC.CardLink to="services" aria-label="services">
                 <picture>
                   <source
                     srcSet={`${IMG[`serviceCard${idx + 1}Desk`]} 1x, ${
