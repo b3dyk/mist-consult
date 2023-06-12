@@ -1,18 +1,23 @@
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout/Layout";
-import HomePage from "./pages/HomePage/HomePage";
-import ServicesPage from "./pages/ServicesPage/ServicesPage";
-import ContactsPage from "./pages/ContactsPage/ContactsPage";
+import Loader from "./components/Loader";
+
+const Layout = lazy(() => import("./components/Layout"));
+const HomePage = lazy(() => import("./pages/HomePage"));
+const ServicesPage = lazy(() => import("./pages/ServicesPage"));
+const ContactsPage = lazy(() => import("./pages/ContactsPage"));
 
 const App: React.FC = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
-        <Route path="services" element={<ServicesPage />} />
-        <Route path="contacts" element={<ContactsPage />} />
-      </Route>
-    </Routes>
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="services" element={<ServicesPage />} />
+          <Route path="contacts" element={<ContactsPage />} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 };
 
