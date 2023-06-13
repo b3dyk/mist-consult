@@ -92,6 +92,14 @@ export const Button = styled.button`
     transform: scale(0.99);
   }
 
+  & > div {
+    color: ${(p) => p.theme.color.snowWhite};
+  }
+
+  :hover > div {
+    color: ${(p) => p.theme.color.accent};
+  }
+
   @media screen and (min-width: 768px) {
     padding-left: 32px;
     padding-right: 32px;

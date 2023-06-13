@@ -1,6 +1,9 @@
-import { useState } from "react";
-import * as SC from "./Form.styled";
+import { useRef, useState } from "react";
 import { toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
+import { ThreeDots } from "react-loader-spinner";
+import * as SC from "./Form.styled";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export interface IFormProps {
   modal: boolean;
@@ -17,7 +20,11 @@ const initialState: IState = {
 };
 
 const Form = ({ modal, toggleModal }: IFormProps) => {
-  const [data, setData] = useState(initialState);
+  const form = useRef<HTMLFormElement>(null);
+
+  const [data, setData] = useLocalStorage("formData", initialState);
+  const [loading, setLoading] = useState(false);
+
   const notifyError = (message: string) => toast.error(message);
   const notifySuccess = (message: string) => toast.success(message);
 
@@ -27,34 +34,49 @@ const Form = ({ modal, toggleModal }: IFormProps) => {
     setData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
 
-    const name = data.name.trim();
-    const phone = data.phone.trim();
+    const name = data!.name.trim();
+    const phone = data!.phone.trim();
 
     if (!name || !phone) {
       notifyError("Будь ласка, заповніть всі поля");
       return;
     }
 
-    notifySuccess("Дякуємо! Наші працівники скоро зв'яжуться з вами");
+    try {
+      setLoading(true);
+      await emailjs.sendForm(
+        "service_pa2rtel",
+        "template_h0ne274",
+        form.current!,
+        "ap6C1hhoh9C5MJmIr"
+      );
 
-    console.log({ name, phone });
-    setData(initialState);
+      notifySuccess("Дякуємо! Наші працівники скоро зв'яжуться з вами");
 
-    if (toggleModal) {
-      toggleModal();
+      setData(initialState);
+      localStorage.removeItem("formData");
+
+      if (toggleModal) {
+        toggleModal();
+      }
+    } catch (error) {
+      console.log(error);
+      notifyError("Йой, щось пішло не так");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <SC.Form onSubmit={handleSubmit} modal={modal}>
+    <SC.Form onSubmit={sendEmail} modal={modal} ref={form}>
       <SC.Label>
         <SC.Input
           type="text"
           name="name"
-          value={data.name}
+          value={data!.name}
           placeholder="Андрій Андрієнко"
           onChange={handleChange}
           autoFocus={modal ? true : false}
@@ -66,14 +88,35 @@ const Form = ({ modal, toggleModal }: IFormProps) => {
         <SC.Input
           type="tel"
           name="phone"
-          value={data.phone}
+          value={data!.phone}
           placeholder="+38 (095) 140 14 40"
           onChange={handleChange}
           required
         />
         <SC.LabelText>Телефон</SC.LabelText>
       </SC.Label>
-      <SC.Button aria-label="form submit">Замовити дзвінок</SC.Button>
+      <SC.Button aria-label="form submit">
+        {loading ? (
+          <ThreeDots
+            height="18"
+            width="80"
+            radius="9"
+            color="currentColor"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{
+              height: "20px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              // color: "#29974e",
+            }}
+            wrapperClass=""
+            visible={true}
+          />
+        ) : (
+          "Замовити дзвінок"
+        )}
+      </SC.Button>
     </SC.Form>
   );
 };
