@@ -23,7 +23,9 @@ export const AdvantagesSection = () => {
               <SC.CardTitle>
                 <CountUp start={0} end={years} delay={1} duration={3} /> років
               </SC.CardTitle>
-              <SC.CardDesc>надаємо послуги в сфері земледіяльності</SC.CardDesc>
+              <SC.CardDesc>
+                у сфері земельних відносин та містобудування
+              </SC.CardDesc>
             </div>
           </SC.Card>
           <SC.Card>

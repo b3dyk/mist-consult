@@ -64,6 +64,18 @@ export const CardLink = styled(Link)`
   height: 100%;
 `;
 
+export const CardImg = styled.img`
+  width: 341px;
+
+  @media screen and (min-width: 768px) {
+    width: 380px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 378px;
+  }
+`;
+
 export const CardTitle = styled.span`
   font-weight: ${(p) => p.theme.fontWeight.semiBold};
   font-size: ${(p) => p.theme.fontSize.xxxl};

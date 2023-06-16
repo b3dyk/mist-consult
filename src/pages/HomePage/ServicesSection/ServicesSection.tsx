@@ -35,7 +35,7 @@ export const ServicesSection = () => {
                     type="image/webp"
                     media="(max-width: 767px)"
                   />
-                  <img src={IMG[`serviceCard${idx + 1}`]} alt={item} />
+                  <SC.CardImg src={IMG[`serviceCard${idx + 1}`]} alt={item} />
                 </picture>
                 <SC.CardTitle>{item}</SC.CardTitle>
               </SC.CardLink>

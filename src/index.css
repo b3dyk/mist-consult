@@ -1,13 +1,13 @@
 @font-face {
   font-family: montserrat;
   src: url("./assets/fonts/Montserrat-VariableFont_wght.ttf");
+  font-display: swap;
 }
 
 :root {
   font-family: montserrat, sans-serif;
   line-height: 1.2;
   font-weight: 400;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
