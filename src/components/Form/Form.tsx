@@ -90,6 +90,7 @@ const Form = ({ modal, toggleModal }: IFormProps) => {
           name="phone"
           value={data!.phone}
           placeholder="+38 (095) 140 14 40"
+          max="10"
           onChange={handleChange}
           required
         />
