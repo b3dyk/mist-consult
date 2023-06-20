@@ -6,6 +6,7 @@ const Layout = lazy(() => import("./components/Layout"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ServicesPage = lazy(() => import("./pages/ServicesPage"));
 const ContactsPage = lazy(() => import("./pages/ContactsPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,8 @@ const App: React.FC = () => {
           <Route path="services" element={<ServicesPage />} />
           <Route path="contacts" element={<ContactsPage />} />
         </Route>
+
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>
   );

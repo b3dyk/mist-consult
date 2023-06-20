@@ -35,7 +35,7 @@ export const Button = styled.button`
   }
 `;
 
-//============================================================================================
+//=========Modal styles=======================================================
 
 export const EllipseTop = styled(SVG.EllipseTop)`
   position: absolute;
