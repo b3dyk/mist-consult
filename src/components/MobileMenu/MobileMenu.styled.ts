@@ -91,3 +91,16 @@ export const ContactLink = styled.a`
   font-size: ${(p) => p.theme.fontSize.m};
   line-height: 1.5;
 `;
+
+export const DevText = styled.p`
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: ${(p) => p.theme.fontWeight.medium};
+  font-size: ${(p) => p.theme.fontSize.xs};
+  line-height: 1.5;
+  text-align: center;
+  color: ${(p) => p.theme.color.textGrey};
+  min-width: 250px;
+`;

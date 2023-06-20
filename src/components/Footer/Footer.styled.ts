@@ -18,6 +18,11 @@ export const Text = styled.p`
   line-height: 1.5;
 `;
 
+export const DevText = styled(Text)`
+  font-size: ${(p) => p.theme.fontSize.xs};
+  color: ${(p) => p.theme.color.textGrey};
+`;
+
 export const ContsctsList = styled.ul`
   display: flex;
   justify-content: flex-end;

@@ -7,7 +7,12 @@ export const Footer = () => {
     <SC.Footer>
       <Container>
         <SC.Wrapper>
-          <SC.Text>&#169; Mist Consult 2023. All rights reserved</SC.Text>
+          <div>
+            <SC.Text>&#169; Mist Consult 2023. All rights reserved</SC.Text>
+            <SC.DevText>
+              Developed by Oleksandr Perlov and Artur Yushkov
+            </SC.DevText>
+          </div>
           <SC.ContsctsList>
             <li>
               <SC.ContactLink href="tel:+380951401440" aria-label="phone">

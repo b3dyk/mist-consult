@@ -53,6 +53,7 @@ export const MobileMenu = ({ toggleMenu }: MobileMenuProps) => {
             </SC.ContactLink>
           </li>
         </SC.ContsctsList>
+        <SC.DevText>Developed by Oleksandr Perlov and Artur Yushkov</SC.DevText>
       </Container>
     </SC.MobileMenu>
   );
