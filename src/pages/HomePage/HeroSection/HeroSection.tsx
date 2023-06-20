@@ -10,8 +10,10 @@ export const HeroSection = () => {
         <SC.Thumb>
           <SC.Logo />
           <SC.HeroWrapper>
-            <SC.SubHeading>Консалтингова компанія</SC.SubHeading>
-            <SC.HeroHeading>МІСТ КОНСАЛТ</SC.HeroHeading>
+            <SC.TitleWrapper>
+              <SC.HeroHeading>МІСТ КОНСАЛТ</SC.HeroHeading>
+              <SC.SubHeading>Консалтингова компанія</SC.SubHeading>
+            </SC.TitleWrapper>
             <SC.Motivation>Між метою та результатом є Міст</SC.Motivation>
             <Button />
           </SC.HeroWrapper>

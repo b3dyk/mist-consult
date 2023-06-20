@@ -57,6 +57,11 @@ export const Logo = styled(SVG.Logo)`
 
 export const HeroWrapper = styled.div``;
 
+export const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+`;
+
 export const SubHeading = styled.h2`
   font-weight: ${(p) => p.theme.fontWeight.bold};
   font-size: ${(p) => p.theme.fontSize.xl};
