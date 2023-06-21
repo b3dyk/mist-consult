@@ -6,6 +6,7 @@ export const MobileMenu = styled.div`
   right: 0;
   top: 0;
   left: 0;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -94,8 +95,9 @@ export const ContactLink = styled.a`
 
 export const DevText = styled.p`
   position: absolute;
-  bottom: 40px;
+  bottom: 60px;
   left: 50%;
+  z-index: 10;
   transform: translateX(-50%);
   font-weight: ${(p) => p.theme.fontWeight.medium};
   font-size: ${(p) => p.theme.fontSize.xs};
