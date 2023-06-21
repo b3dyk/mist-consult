@@ -9,7 +9,7 @@ type MobileMenuProps = {
 export const MobileMenu = ({ toggleMenu }: MobileMenuProps) => {
   return (
     <SC.MobileMenu id="mobileMenu">
-      <Container>
+      <Container style={{ position: "relative", zIndex: "6" }}>
         <SC.Wrapper>
           <SC.MenuTitle>Міст Консалт</SC.MenuTitle>
           <IconButton
