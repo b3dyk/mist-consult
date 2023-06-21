@@ -42,6 +42,8 @@ export const MenuTitle = styled.p`
 `;
 
 export const List = styled.ul`
+  position: relative;
+  z-index: 6;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -75,6 +77,8 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const ContsctsList = styled.ul`
+  position: relative;
+  z-index: 6;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
