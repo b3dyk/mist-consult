@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { Container } from "../../styles/common";
 
 export const MobileMenu = styled.div`
   position: absolute;
@@ -25,6 +26,12 @@ export const MobileMenu = styled.div`
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
+export const MobileContainer = styled(Container)`
+  position: relative;
+  z-index: 7;
+  min-height: 100vh;
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -42,8 +49,6 @@ export const MenuTitle = styled.p`
 `;
 
 export const List = styled.ul`
-  position: relative;
-  z-index: 6;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -77,8 +82,6 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const ContsctsList = styled.ul`
-  position: relative;
-  z-index: 6;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;

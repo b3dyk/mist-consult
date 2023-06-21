@@ -1,5 +1,5 @@
 import { SVG } from "../../assets/images";
-import { Container, IconButton } from "../../styles/common";
+import { IconButton } from "../../styles/common";
 import * as SC from "./MobileMenu.styled";
 
 type MobileMenuProps = {
@@ -9,7 +9,7 @@ type MobileMenuProps = {
 export const MobileMenu = ({ toggleMenu }: MobileMenuProps) => {
   return (
     <SC.MobileMenu id="mobileMenu">
-      <Container style={{ position: "relative", zIndex: "6" }}>
+      <SC.MobileContainer>
         <SC.Wrapper>
           <SC.MenuTitle>Міст Консалт</SC.MenuTitle>
           <IconButton
@@ -54,7 +54,7 @@ export const MobileMenu = ({ toggleMenu }: MobileMenuProps) => {
           </li>
         </SC.ContsctsList>
         <SC.DevText>Developed by Oleksandr Perlov and Artur Yushkov</SC.DevText>
-      </Container>
+      </SC.MobileContainer>
     </SC.MobileMenu>
   );
 };
