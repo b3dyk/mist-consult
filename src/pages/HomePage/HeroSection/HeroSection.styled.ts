@@ -143,6 +143,8 @@ export const ContactLink = styled.a`
   font-size: ${(p) => p.theme.fontSize.m};
   line-height: 1.5;
 
+  opacity: 0;
+
   transition: color ${(p) => p.theme.animation.main};
 
   @media screen and (min-width: 1440px) {
@@ -153,5 +155,19 @@ export const ContactLink = styled.a`
   :hover,
   :focus {
     color: ${(p) => p.theme.color.accent};
+  }
+
+  animation: appear 1500ms ease-in-out
+    ${(p) => (p["aria-label"] === "phone" ? "1000ms" : "1500ms")} forwards;
+
+  @keyframes appear {
+    0% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: rotateY(0);
+      opacity: 1;
+    }
   }
 `;
