@@ -158,7 +158,7 @@ export const ContactLink = styled.a`
   }
 
   animation: appear 1500ms ease-in-out
-    ${(p) => (p["aria-label"] === "phone" ? "1000ms" : "1500ms")} forwards;
+    ${(p) => (p["aria-label"] === "phone" ? "1500ms" : "2000ms")} forwards;
 
   @keyframes appear {
     0% {
@@ -166,7 +166,7 @@ export const ContactLink = styled.a`
     }
 
     100% {
-      transform: rotateY(0);
+      transform: translateY(0);
       opacity: 1;
     }
   }
