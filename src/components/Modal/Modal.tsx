@@ -2,7 +2,6 @@ import React, { useEffect, MouseEvent } from "react";
 import { createPortal } from "react-dom";
 
 import * as SC from "./Modal.styled";
-import { SVG } from "../../assets/images";
 import { useScrollLock } from "../../hooks/useScrollLock";
 
 const modalRoot = document.querySelector("#modal-root") as HTMLElement;

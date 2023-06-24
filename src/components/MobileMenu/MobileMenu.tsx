@@ -1,12 +1,11 @@
 import { SVG } from "../../assets/images";
+import { useMobMenu } from "../../hooks/useMobMenu";
 import { IconButton } from "../../styles/common";
 import * as SC from "./MobileMenu.styled";
 
-type MobileMenuProps = {
-  toggleMenu: () => void;
-};
+export const MobileMenu = () => {
+  const handleBurgerMenu = useMobMenu();
 
-export const MobileMenu = ({ toggleMenu }: MobileMenuProps) => {
   return (
     <SC.MobileMenu id="mobileMenu">
       <SC.MobileContainer>
@@ -14,7 +13,7 @@ export const MobileMenu = ({ toggleMenu }: MobileMenuProps) => {
           <SC.MenuTitle>Міст Консалт</SC.MenuTitle>
           <IconButton
             type="button"
-            onClick={toggleMenu}
+            onClick={handleBurgerMenu}
             aria-label="close menu"
           >
             <SVG.Close />
@@ -23,17 +22,17 @@ export const MobileMenu = ({ toggleMenu }: MobileMenuProps) => {
         <nav>
           <SC.List>
             <li>
-              <SC.StyledLink to="/" onClick={toggleMenu}>
+              <SC.StyledLink to="/" onClick={handleBurgerMenu}>
                 Головна
               </SC.StyledLink>
             </li>
             <li>
-              <SC.StyledLink to="services" onClick={toggleMenu}>
+              <SC.StyledLink to="services" onClick={handleBurgerMenu}>
                 Послуги
               </SC.StyledLink>
             </li>
             <li>
-              <SC.StyledLink to="contacts" onClick={toggleMenu}>
+              <SC.StyledLink to="contacts" onClick={handleBurgerMenu}>
                 Контакти
               </SC.StyledLink>
             </li>

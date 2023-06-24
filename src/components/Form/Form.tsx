@@ -4,10 +4,10 @@ import emailjs from "@emailjs/browser";
 import { ThreeDots } from "react-loader-spinner";
 import * as SC from "./Form.styled";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { useModal } from "../../hooks/useModal";
 
 export interface IFormProps {
   modal: boolean;
-  toggleModal?: () => void;
 }
 
 interface IState {
@@ -19,7 +19,8 @@ const initialState: IState = {
   phone: "",
 };
 
-const Form = ({ modal, toggleModal }: IFormProps) => {
+const Form = ({ modal }: IFormProps) => {
+  const { toggleModal } = useModal();
   const form = useRef<HTMLFormElement>(null);
 
   const [data, setData] = useLocalStorage("formData", initialState);
@@ -59,9 +60,7 @@ const Form = ({ modal, toggleModal }: IFormProps) => {
       setData(initialState);
       localStorage.removeItem("formData");
 
-      if (toggleModal) {
-        toggleModal();
-      }
+      toggleModal();
     } catch (error) {
       console.log(error);
       notifyError("Йой, щось пішло не так");
@@ -109,7 +108,6 @@ const Form = ({ modal, toggleModal }: IFormProps) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              // color: "#29974e",
             }}
             wrapperClass=""
             visible={true}

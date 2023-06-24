@@ -1,14 +1,10 @@
-import { useState } from "react";
 import * as SC from "./Button.styled";
 import Modal from "../Modal";
 import Form from "../Form";
+import { useModal } from "../../hooks/useModal";
 
 const Button = () => {
-  const [isOpenModal, setIsOpenModal] = useState(false);
-
-  const toggleModal = () => {
-    setIsOpenModal((p) => !p);
-  };
+  const { isOpenModal, toggleModal } = useModal();
 
   return (
     <>
@@ -23,7 +19,7 @@ const Button = () => {
           <SC.Title>Зацікавили послуги?</SC.Title>
           <SC.Text>Введіть ваші контактні дані та ми вам зателефонуємо</SC.Text>
 
-          <Form modal={true} toggleModal={toggleModal} />
+          <Form modal={true} />
 
           <SC.Cta>або зателефонуйте нам</SC.Cta>
           <SC.Number href="tel:+380951401440" aria-label="phone">

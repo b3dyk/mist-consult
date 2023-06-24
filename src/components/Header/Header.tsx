@@ -6,20 +6,10 @@ import { SVG } from "../../assets/images";
 import { Container } from "../../styles/common/Container.styled";
 import { useResize } from "../../hooks/useResize";
 import { IconButton } from "../../styles/common";
-import { useScrollLock } from "../../hooks/useScrollLock";
+import { useMobMenu } from "../../hooks/useMobMenu";
 
 const Header = () => {
-  const { lockScroll, unlockScroll } = useScrollLock();
-  const handleBurgerMenu = () => {
-    const mobileMenu = document.querySelector("#mobileMenu") as HTMLElement;
-    mobileMenu.classList.toggle("isOpen");
-
-    if (mobileMenu.classList.contains("isOpen")) {
-      lockScroll();
-    } else {
-      unlockScroll();
-    }
-  };
+  const handleBurgerMenu = useMobMenu();
   const { isScreenMobile } = useResize();
 
   return (
@@ -63,7 +53,7 @@ const Header = () => {
           )}
         </SC.HeaderContainer>
       </Container>
-      {isScreenMobile && <MobileMenu toggleMenu={handleBurgerMenu} />}
+      {isScreenMobile && <MobileMenu />}
     </SC.Header>
   );
 };
