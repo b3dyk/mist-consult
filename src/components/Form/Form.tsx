@@ -1,13 +1,13 @@
 import { useRef, useState } from "react";
 import { toast } from "react-toastify";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 import { ThreeDots } from "react-loader-spinner";
 import * as SC from "./Form.styled";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
-import { useModal } from "../../hooks/useModal";
 
 export interface IFormProps {
   modal: boolean;
+  toggleModal: () => void;
 }
 
 interface IState {
@@ -19,8 +19,7 @@ const initialState: IState = {
   phone: "",
 };
 
-const Form = ({ modal }: IFormProps) => {
-  const { toggleModal } = useModal();
+const Form = ({ modal, toggleModal }: IFormProps) => {
   const form = useRef<HTMLFormElement>(null);
 
   const [data, setData] = useLocalStorage("formData", initialState);
@@ -32,33 +31,37 @@ const Form = ({ modal }: IFormProps) => {
   const handleChange = ({
     currentTarget: { name, value },
   }: React.ChangeEvent<HTMLInputElement>) => {
-    setData((prev) => ({ ...prev, [name]: value }));
+    setData((prev) => {
+      if (name === "phone") {
+        return { ...prev, [name]: value.trim().replaceAll(/[^0-9]/g, "") };
+      }
+
+      return { ...prev, [name]: value.trim() };
+    });
   };
 
   const sendEmail = async (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
 
-    const name = data!.name.trim();
-    const phone = data!.phone.trim();
-
-    if (!name || !phone) {
+    if (!data!.name || !data!.phone) {
       notifyError("Будь ласка, заповніть всі поля");
       return;
     }
 
     try {
       setLoading(true);
-      await emailjs.sendForm(
-        "service_pa2rtel",
-        "template_h0ne274",
-        form.current!,
-        "ap6C1hhoh9C5MJmIr"
-      );
-
+      // await emailjs.sendForm(
+      //   "service_pa2rtel",
+      //   "template_h0ne274",
+      //   form.current!,
+      //   "ap6C1hhoh9C5MJmIr"
+      // );
+      console.log(data);
       notifySuccess("Дякуємо! Наші працівники скоро зв'яжуться з вами");
 
       setData(initialState);
       localStorage.removeItem("formData");
+      console.log();
 
       toggleModal();
     } catch (error) {
@@ -70,7 +73,12 @@ const Form = ({ modal }: IFormProps) => {
   };
 
   return (
-    <SC.Form onSubmit={sendEmail} modal={modal} ref={form}>
+    <SC.Form
+      onSubmit={sendEmail}
+      modal={modal}
+      ref={form}
+      toggleModal={toggleModal}
+    >
       <SC.Label>
         <SC.Input
           type="text"

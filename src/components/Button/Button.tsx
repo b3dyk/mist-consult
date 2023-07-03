@@ -19,7 +19,7 @@ const Button = () => {
           <SC.Title>Зацікавили послуги?</SC.Title>
           <SC.Text>Введіть ваші контактні дані та ми вам зателефонуємо</SC.Text>
 
-          <Form modal={true} />
+          <Form modal={true} toggleModal={toggleModal} />
 
           <SC.Cta>або зателефонуйте нам</SC.Cta>
           <SC.Number href="tel:+380951401440" aria-label="phone">
