@@ -7,7 +7,7 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export interface IFormProps {
   modal: boolean;
-  toggleModal: () => void;
+  toggleModal?: () => void;
 }
 
 interface IState {
@@ -63,7 +63,7 @@ const Form = ({ modal, toggleModal }: IFormProps) => {
       localStorage.removeItem("formData");
       console.log();
 
-      toggleModal();
+      toggleModal!();
     } catch (error) {
       console.log(error);
       notifyError("Йой, щось пішло не так");
@@ -73,12 +73,7 @@ const Form = ({ modal, toggleModal }: IFormProps) => {
   };
 
   return (
-    <SC.Form
-      onSubmit={sendEmail}
-      modal={modal}
-      ref={form}
-      toggleModal={toggleModal}
-    >
+    <SC.Form onSubmit={sendEmail} modal={modal} ref={form}>
       <SC.Label>
         <SC.Input
           type="text"
