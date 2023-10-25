@@ -1,8 +1,10 @@
-import { Container } from "../../styles/common";
-import * as SC from "./ServicesPage.styled";
-import { options } from "../../assets/data/options";
-import Option from "./Option";
 import { useEffect } from "react";
+
+import { Container } from "../../styles/common";
+import { options } from "../../assets/data/options";
+import { Option } from "./Option";
+
+import * as SC from "./ServicesPage.styled";
 
 const ServicesPage: React.FC = () => {
   useEffect(() => {

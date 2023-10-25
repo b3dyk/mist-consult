@@ -1,3 +1,1 @@
-import { ServicesSection } from "./ServicesSection";
-
-export default ServicesSection;
+export * from "./ServicesSection";
