@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter basename="mist-consult">
+    <BrowserRouter basename="/mist-consult">
       <ThemeProvider theme={globalStyles}>
         <App />
       </ThemeProvider>
